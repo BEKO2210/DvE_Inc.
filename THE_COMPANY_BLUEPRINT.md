@@ -495,39 +495,303 @@ Fach-Agenten → zuständiger C-Agent → CEO-Agent → **tägliche Entscheidung
 
 ## 4. Business Units
 
-> _Je Unit: Zweck, Produkte, Einnahmemodelle, benötigte Agenten, benötigte Menschen, Risiken, Qualitätskontrolle, Skalierungslogik._
+Acht Business Units bilden den Geschäftsbaukasten von "The Company". **Nur Unit A ist in Phase 0 aktiv** — die übrigen sind vollständig definiert, aber "geparkt" und werden phasenweise aktiviert (Reihenfolge siehe Kapitel 9 und 17). Jede Unit folgt demselben Steckbrief-Raster.
 
-- 4.A AI Software Studio
-- 4.B Digital Product Factory
-- 4.C Physical Services Marketplace
-- 4.D Autonomous Marketing Agency
-- 4.E Premium Engineering Lab
-- 4.F Game / Media / Content Studio
-- 4.G Local Operations Network
-- 4.H Internal Tools & Automation Division
+**Aktivierungs-Fahrplan (Übersicht):**
+
+| Unit | Name | Aktiviert ab | Abhängigkeit |
+|---|---|---|---|
+| A | AI Software Studio | **Phase 0 (sofort)** | — |
+| H | Internal Tools & Automation Division | Phase 0–1 (intern) | wächst mit dem OS mit |
+| D | Autonomous Marketing Agency | Phase 1 | Liefererfahrung aus A |
+| B | Digital Product Factory | Phase 1–2 | wiederverwendbare Bausteine aus A |
+| F | Game / Media / Content Studio | Phase 2 | Content-Pipelines aus D |
+| E | Premium Engineering Lab | Phase 2–3 | Senior-Freelancer-Netz |
+| C | Physical Services Marketplace | Phase 3 | Operator-Netz + Haftungsabsicherung |
+| G | Local Operations Network | Phase 3–4 | Skalierung von C |
+
+---
+
+### 4.A AI Software Studio  *(Phase 0 — aktiv)*
+
+- **Zweck:** Software-Ergebnisse für Startups und Gründer liefern — schnell, planbar, in Premium-Qualität. Dies ist die Cashflow-Maschine und das Lernfeld für das gesamte OS.
+- **Produkte:**
+  - *Einstieg:* "Landingpage in 48 h" (750–1.500 €) — Fixpreis, klarer Scope, schnelle Lieferung.
+  - *Ausbau:* Mehrseitige Websites, MVP-Prototypen, interne Tools/Dashboards, Integrationen, kleine Web-Apps.
+  - *Wiederkehrend:* Wartungs-/Hosting-/Update-Abos nach Launch (Live-Ops-Logik).
+- **Einnahmemodelle:** Fixpreis-Projekte (Hauptquelle Phase 0), monatliche Wartungs-Retainer, Stundenkontingente für Erweiterungen, Hosting-Aufschlag.
+- **Benötigte Agenten:** Sales (LinkedIn-Akquise), CPO (Scope), CTO (Bau), QA (Prüfung), CFO (Kalkulation/Rechnung), Support, Brand (Konsistenz), Audit/Safety (quer).
+- **Benötigte Menschen:** Gründer (Prüfung, Freigabe, Kundengespräch). Bei Bedarf: 1 Design-Freelancer für anspruchsvolle Optik, 1 Senior-Dev-Freelancer für Review größerer Projekte.
+- **Risiken:** Output-Qualität schwankt; Scope Creep; UWG-Risiko bei Akquise; Termin-Versprechen ("48 h") nicht haltbar; Kunde unzufrieden trotz erfüllter Spec.
+- **Qualitätskontrolle:** QA-Agent mit Veto + Gründer-Review vor jeder Auslieferung; Akzeptanzkriterien im Angebot fixiert; Staging-Vorschau für den Kunden vor Live-Schaltung.
+- **Skalierungslogik:** Jedes Projekt füllt die Komponenten-/Vorlagenbibliothek. Projekt #10 nutzt 70–80 % Standardbausteine → Stückkosten sinken, Marge steigt. Skalierung über mehr parallele Product Studios, nicht über mehr Stunden.
+
+### 4.B Digital Product Factory  *(Phase 1–2)*
+
+- **Zweck:** Eigene digitale Produkte statt Kundenauftrag — höhere Marge, wiederkehrender Umsatz, Asset-Aufbau.
+- **Produkte:** Kleine SaaS-Tools, Templates/Themes, Komponenten-Pakete, Plugins, digitale Vorlagen, Mikro-Apps.
+- **Einnahmemodelle:** SaaS-Abos, Einmalverkäufe (Templates), Lizenzgebühren, Freemium mit Upgrade.
+- **Benötigte Agenten:** CPO (Produktdefinition), CTO (Bau & Betrieb), Brand, Sales/Marketing, Support, CFO.
+- **Benötigte Menschen:** Gründer (Produktrichtung), gelegentlich Spezial-Freelancer (komplexe Features, Design).
+- **Risiken:** Produkte ohne Nachfrage (gebaut, aber niemand kauft); Betriebs-/Wartungslast bindet Kapazität; Support-Aufwand bei vielen Kleinkunden.
+- **Qualitätskontrolle:** QA-Agent, Beta-Phase mit echten Nutzern, Analytics-gestützte Iteration, harte "Kill"-Kriterien für erfolglose Produkte.
+- **Skalierungslogik:** Erfolgreiche Produkte werden zu Franchises ausgebaut (Activision-Logik); erfolglose früh eingestellt. Baut auf den Bausteinen aus Unit A auf.
+
+### 4.C Physical Services Marketplace  *(Phase 3)*
+
+- **Zweck:** Vermittlung physischer Dienstleistungen — die Firma koordiniert, geprüfte lokale Anbieter führen aus.
+- **Produkte:** Vermittelte Handwerks-/Montage-/Reinigungs-/Logistikleistungen mit standardisiertem Briefing, Qualitätsgarantie und einheitlicher Abwicklung.
+- **Einnahmemodelle:** Vermittlungsprovision, Service-Aufschlag, Premium-Garantiepaket, Abo für wiederkehrende Leistungen.
+- **Benötigte Agenten:** Field-Operations (Koordination), CHRO (Operator-Netz), QA, Support, CFO, CLO (Haftung!), Safety.
+- **Benötigte Menschen:** Geprüfte Werkstätten/Handwerker/Dienstleister, lokale Operatoren, Gründer/Ops-Mensch für Haftungsfälle.
+- **Risiken:** **Hohe Haftung** (Schäden vor Ort), Qualitätsschwankungen bei Partnern, Versicherungsbedarf, regulatorische Anforderungen je Gewerk, Plattformhaftung.
+- **Qualitätskontrolle:** Strenges Operator-Onboarding (Nachweise, Versicherung, Probeauftrag), Bewertungssystem, Stichprobenkontrollen, Eskalations-Hotline mit Mensch.
+- **Skalierungslogik:** Erst eine Region + ein Gewerk wasserdicht machen, dann Gewerk für Gewerk und Region für Region ausrollen. Nicht vor solider Haftungs-/Versicherungsbasis starten.
+
+### 4.D Autonomous Marketing Agency  *(Phase 1)*
+
+- **Zweck:** Marketing als Service — Content, Kampagnen, SEO, Social — für dieselbe Zielgruppe wie Unit A (Startups/Gründer).
+- **Produkte:** Content-Pakete, Landingpage-Copy, SEO-Grundpakete, Social-Media-Betreuung, Kampagnen-Konzepte, Newsletter.
+- **Einnahmemodelle:** Monats-Retainer (Hauptquelle), Projektpreise, Performance-Komponenten (vorsichtig, klar geregelt).
+- **Benötigte Agenten:** Brand, Sales, CPO, mehrere Content-Agenten, QA, Support, CFO, CLO (Werberecht/UWG).
+- **Benötigte Menschen:** Gründer (Freigabe veröffentlichter Inhalte), Freelance-Texter/Designer für Premium-Anspruch.
+- **Risiken:** UWG/Werberecht, Marken-/Reputationsschaden durch schlechten Content, Performance-Versprechen, generischer "AI-Content" ohne Substanz.
+- **Qualitätskontrolle:** QA-Agent + menschliche Freigabe vor Veröffentlichung, Brand-Konsistenzprüfung, Faktencheck-Schritt, CLO-Prüfung werblicher Aussagen.
+- **Skalierungslogik:** Cross-Selling zu Unit-A-Kunden (Website + Marketing aus einer Hand). Content-Pipelines werden später von Unit F mitgenutzt.
+
+### 4.E Premium Engineering Lab  *(Phase 2–3)*
+
+- **Zweck:** Anspruchsvolle technische Projekte — die "Porsche-Linie": höchste Qualität, höchster Preis, ausgewählte Kunden.
+- **Produkte:** Komplexe Web-Apps, individuelle Software, technische Beratung, Architektur-Reviews, anspruchsvolle Integrationen.
+- **Einnahmemodelle:** Hochpreisige Festpreisprojekte, Tagessätze, langfristige Entwicklungs-Retainer, Beratungspakete.
+- **Benötigte Agenten:** CTO (führend), CPO, QA (verschärft), CFO, Sales, CLO, Audit/Safety.
+- **Benötigte Menschen:** **Senior-Entwickler-Freelancer als Kern** (Agenten unterstützen, Menschen verantworten), Gründer als Account-Lead.
+- **Risiken:** Überforderung des Agentensystems bei echter Komplexität, Termin-/Budgetüberschreitung, Haftung bei kritischer Software, Abhängigkeit von einzelnen Senior-Freelancern.
+- **Qualitätskontrolle:** Doppelte QS (Agent + Senior-Mensch), Code-Reviews durch Menschen verpflichtend, Architektur-Freigabe durch Mensch, Test-Abdeckungspflicht.
+- **Skalierungslogik:** Bewusst *nicht* masse-skaliert — wächst über Reputation und Referenzen. Quelle für Premium-Marge und Markenprestige, das auf alle Units abstrahlt.
+
+### 4.F Game / Media / Content Studio  *(Phase 2)*
+
+- **Zweck:** Eigene Medien-/Content-/kleine Spiele-Projekte — Franchise- und Community-Denken (Activision-Logik im Kleinen).
+- **Produkte:** Browser-/Mini-Games, interaktive Web-Erlebnisse, Content-Serien, Lernspiele, Media-Formate.
+- **Einnahmemodelle:** In-Game-/In-Content-Käufe (fair, ohne ausbeuterische Mechaniken), Werbung, Sponsoring, Lizenzierung, Community-Abos.
+- **Benötigte Agenten:** CPO, CTO, Brand, mehrere Content-/Asset-Agenten, Community-/Support-Agent, Analytics, CFO, CLO (Jugendschutz, Urheberrecht).
+- **Benötigte Menschen:** Kreative Freelancer (Art, Sound, Game-Design), Gründer (kreative Richtung & Freigabe).
+- **Risiken:** Content trifft Geschmack nicht, hohe Floprate, Urheberrechts-/Jugendschutzfragen, Monetarisierung wirkt ausbeuterisch, Community-Moderation.
+- **Qualitätskontrolle:** QA-Agent, Community-Beta, Moderationsregeln, CLO-Prüfung (Jugendschutz/Recht), kreative Freigabe durch Mensch.
+- **Skalierungslogik:** Wenige Treffer tragen viele Flops (Portfolio-Logik). Erfolgreiche Formate werden zu Franchises. Nutzt Content-Pipelines aus Unit D.
+
+### 4.G Local Operations Network  *(Phase 3–4)*
+
+- **Zweck:** Das skalierte, flächige Netz lokaler Operatoren — das "Händler-/Service-Netzwerk" als eigene Unit, Infrastruktur für Unit C und alle physischen Bedarfe.
+- **Produkte:** Standardisierte lokale Präsenz "as a service" — Vor-Ort-Abwicklung, lokale Logistik, regionale Operatoren-Teams.
+- **Einnahmemodelle:** Provision je vermittelten Einsatz, regionale Lizenzgebühren, Infrastruktur-Fee von anderen Units.
+- **Benötigte Agenten:** Field-Operations, CHRO, COO, QA, Support, CFO, CLO, Safety.
+- **Benötigte Menschen:** Regionale Operatoren/Koordinatoren, Fachkräfte-Pools, Gründer/Ops-Leitung.
+- **Risiken:** Qualitäts- und Markenkonsistenz über viele Regionen, Arbeitsrecht/Scheinselbstständigkeit, Haftung, Steuerung aus der Distanz, Betrugsrisiko.
+- **Qualitätskontrolle:** Einheitliche Operator-Standards, regelmäßige Audits, Bewertungssystem, regionale Mensch-Verantwortliche, Mystery-Checks.
+- **Skalierungslogik:** Region für Region als wiederholbares "Playbook". Jede neue Region nutzt dasselbe Onboarding-, Briefing- und Kontrollsystem.
+
+### 4.H Internal Tools & Automation Division  *(Phase 0–1 — intern)*
+
+- **Zweck:** Baut und betreibt "The Company OS" selbst — die Division, die alle anderen Units erst möglich macht. **In Phase 0 ist das faktisch der Gründer + Agenten, die nebenbei am OS arbeiten.**
+- **Produkte (intern):** Agent Registry, Workflow Engine, Approval-Dashboard, Audit-Logs, Vorlagen, Memory-System. **Produkte (extern, ab Phase 2):** Das OS als White-Label-Plattform für andere Unternehmer.
+- **Einnahmemodelle:** Intern: keine direkten Einnahmen, aber Kostsenkung über alle Units. Extern (später): SaaS-Lizenz, White-Label-Gebühr, Setup-/Beratungs-Fee.
+- **Benötigte Agenten:** CTO (führend), CPO, CISO, Audit, QA.
+- **Benötigte Menschen:** Gründer (Architektur-Richtung, Priorisierung), später Senior-Dev-Freelancer für Kernkomponenten.
+- **Risiken:** Over-Engineering statt Kundenarbeit, das OS bindet zu viel Zeit, Sicherheitslücken im Kern, "Werkzeug-Verliebtheit" auf Kosten von Umsatz.
+- **Qualitätskontrolle:** Striktes Priorisieren ("baut diese OS-Funktion gerade Umsatz oder spart sie echt Zeit?"), CISO-Review, QA, kein Feature ohne konkreten Bedarf aus einer anderen Unit.
+- **Skalierungslogik:** Das OS wird aus realem Bedarf der Units heraus gebaut (nie spekulativ). Ab Phase 2 wird es so verallgemeinert, dass es als Produkt verkauft werden kann (siehe Kapitel 8.9) — dann wird H zur umsatztragenden Unit.
+
+### 4.X Querschnittsregeln für alle Business Units
+
+- Jede Unit hat **eigenes Budget, eigene KPIs, eigenen Registry-Eintrag** und einen verantwortlichen Lead-Agenten.
+- Keine Unit darf eine **rote Linie** umgehen (Zahlungen, Verträge → immer Mensch).
+- Eine neue Unit wird erst aktiviert, wenn die **Vorgänger-Unit stabil liefert** und ihre Abhängigkeit (siehe Fahrplan) erfüllt ist.
+- Jede Unit speist Lerndaten in das **Data & Memory Layer** — Fehler in einer Unit verbessern alle.
+- Eine Unit kann **eingestellt** werden ("Kill"-Kriterium), wenn sie über einen definierten Zeitraum die Mindest-KPIs verfehlt — ohne Drama, mit dokumentierter Lehre.
 
 ---
 
 ## 5. Agentenarchitektur
 
-> _Technisches System + Auftragsdurchlauf._
+Dieses Kapitel beschreibt das technische Rückgrat — "The Company OS". Leitprinzipien:
 
-- 5.1 Agent Registry
-- 5.2 Memory System
-- 5.3 Tool Permission System
-- 5.4 Task Router
-- 5.5 Workflow Engine
-- 5.6 Approval Gates
-- 5.7 Audit Logs
-- 5.8 Simulation Layer
-- 5.9 Digital Twin der Firma
-- 5.10 Evaluation System
-- 5.11 Incident Management
-- 5.12 Secrets Management
-- 5.13 Role-Based Access Control (RBAC)
-- 5.14 Budget Limits
-- 5.15 Risk Scoring
-- 5.16 Auftragsdurchlauf End-to-End (Eingang → Analyse → Angebot → Freigabe → Planung → Ausführung → QS → Rechnung → Support → Nachkalkulation → Lernen)
+- **Pragmatischer Stack (vom Architekten gewählt):** **Supabase** (Postgres + Auth + Edge Functions) als Daten-/Logik-Kern, **Cloudflare** (Workers, R2, KV) für günstige Always-on-Dienste und Speicher, **Vercel** für Frontends/Dashboards, **GitHub** als Code- und Audit-Anker, **Notion** als menschenlesbare Wissens-/Vorlagenoberfläche. Begründung: alle haben großzügige Gratis-/Billig-Tarife (passt zu < 5.000 €), sind über die im System verfügbaren MCP-Tools direkt steuerbar und decken zusammen Datenbank, Hosting, Speicher, Edge-Logik und Doku ab, ohne eigene Server.
+- **Multi-Provider + lokale Modelle:** Cloud-Modelle (Claude als Primär, weitere als Fallback) für anspruchsvolle Arbeit; **lokale Modelle (Ollama)** für (a) datenschutzsensible Tasks, (b) günstige Routine-Massenarbeit, (c) Fallback bei Cloud-Ausfall. Ein **Model Router** entscheidet pro Task.
+- **Alles ist Konfiguration, kein Code-Umbau:** Rollen, Limits, Rechte, Workflows liegen als Daten in der Registry — Organisationsänderungen sind Datenänderungen.
+- **Sicher per Default:** Ein Agent kann nur, was ihm explizit erlaubt ist. Im Zweifel: blockieren und eskalieren.
+
+### 5.1 Agent Registry
+
+Das zentrale Verzeichnis aller Agenten — eine Postgres-Tabelle in Supabase. Jeder Agent-Eintrag enthält:
+
+| Feld | Inhalt |
+|---|---|
+| `agent_id` | eindeutige ID |
+| `rolle` | z. B. CFO-Agent, QA-Agent (siehe Kapitel 3) |
+| `version` | versioniert — Änderungen sind nachvollziehbar |
+| `system_prompt_ref` | Referenz auf die versionierte Rollen-/Verhaltensdefinition |
+| `erlaubte_tools` | Liste von Tool-IDs (siehe 5.3) |
+| `budget_limit` | autonomes Ausgabenlimit (meist 0 € — siehe 5.14) |
+| `risk_ceiling` | max. Risk-Score, den der Agent ohne Eskalation ausführen darf |
+| `model_policy` | welche Modelle/Provider erlaubt sind |
+| `status` | aktiv / pausiert / quarantäne |
+| `owner_human` | verantwortlicher Mensch (Phase 0: immer der Gründer) |
+
+Die Registry ist die "Single Source of Truth" — Task Router, RBAC und Audit lesen alle aus ihr.
+
+### 5.2 Memory System
+
+Vier Gedächtnisarten, getrennt gespeichert:
+
+1. **Kurzzeit-/Arbeitsgedächtnis** — Kontext eines laufenden Tasks (flüchtig, in der Workflow-Instanz).
+2. **Projektgedächtnis** — alles zu einem Product Studio: Anforderungen, Entscheidungen, Outputs, Kundenkommunikation (Supabase, pro Projekt).
+3. **Organisationsgedächtnis** — firmenweites Wissen: Vorlagen, Standards, gelöste Probleme, Lieferanten-Ratings (Supabase + Notion-Spiegel für Menschen).
+4. **Lerngedächtnis** — strukturierte Nachkalkulationen und "Lessons Learned" aus abgeschlossenen Projekten (siehe 5.16, Schritt "Lernen").
+
+**Datenschutz:** PII und Kundendaten werden markiert und bei Verarbeitung bevorzugt an **lokale Modelle** geroutet. Zugriff ist über RBAC eingeschränkt; jeder Lesezugriff auf sensible Daten erzeugt einen Audit-Eintrag. Löschkonzept und Aufbewahrungsfristen nach DSGVO sind Pflichtfelder.
+
+### 5.3 Tool Permission System
+
+Jedes "Tool" (E-Mail senden, GitHub-Push, Rechnung erstellen, Zahlung auslösen, LinkedIn-Nachricht …) ist registriert mit:
+
+- **Tool-ID & Beschreibung**
+- **Risikoklasse:** grün (frei) / gelb (mit Limit/Logging) / rot (immer Human-Approval)
+- **erlaubte Rollen** (welche Agenten es überhaupt aufrufen dürfen)
+- **Parametergrenzen** (z. B. E-Mail nur an verifizierte Domains, Zahlung max. 0 €)
+
+Ein Agent kann ein Tool nur aufrufen, wenn (1) es in seiner Registry-`erlaubte_tools`-Liste steht **und** (2) die Risikoklasse + RBAC + Budgetlimit den konkreten Aufruf erlauben. Rote Tools (Zahlung, Vertragsunterschrift) sind technisch so verdrahtet, dass sie *ohne* signierte Human-Approval gar nicht ausführen.
+
+### 5.4 Task Router
+
+Nimmt eine Aufgabe (vom CEO-Agenten, von einem Workflow, von einem Trigger) und entscheidet:
+
+- **Welcher Agent / welche Rolle** ist zuständig?
+- **Welches Modell** (Cloud vs. lokal) — nach Sensibilität, Komplexität, Kosten, Verfügbarkeit?
+- **Priorität & Reihenfolge** — Abhängigkeiten beachten.
+- **Eskalieren statt routen**, wenn Risk-Score oder Budget die Schwelle reißt.
+
+Implementierung: eine Supabase Edge Function + Warteschlange (Cloudflare Queue/KV). Jede Routing-Entscheidung wird geloggt.
+
+### 5.5 Workflow Engine
+
+Führt mehrstufige Prozesse als definierte Zustandsmaschinen aus (z. B. den kompletten Auftragsdurchlauf aus 5.16). Eigenschaften:
+
+- **Deklarative Workflows** — als Daten/Config, nicht hartkodiert.
+- **Jeder Schritt** hat: zuständige Rolle, erlaubte Tools, Erfolgskriterium, Timeout, Eskalationsregel.
+- **Approval-Schritte** sind erste-Klasse-Bürger — der Workflow *pausiert* hart, bis ein Mensch freigibt.
+- **Wiederaufnahme & Idempotenz** — ein abgebrochener Workflow kann sicher fortgesetzt werden.
+- **Zustand** liegt in Supabase; lang laufende Watcher als Cloudflare Workers.
+
+### 5.6 Approval Gates
+
+Die Stellen, an denen ein Mensch entscheidet. Ein Gate definiert:
+
+- **Auslöser** — z. B. "Geldabfluss > 0 €", "Vertrag", "externe Erstkommunikation", "Risk-Score ≥ X", "Produktiv-Deployment".
+- **Approver** — Phase 0: immer der Gründer.
+- **Entscheidungsvorlage** — der Agent liefert: Was, Warum, Kosten, Risiko, Alternativen, Empfehlung — kompakt, damit der Gründer in Sekunden entscheiden kann.
+- **Ergebnis** — signiert (wer, wann, was), unveränderlich im Audit-Log.
+- **Verfall** — Gates haben ein Timeout; ohne Freigabe wird *nicht* ausgeführt (Fail-Closed).
+
+**Gebündelte Freigaben:** Routine-Gates werden zu festen Freigabe-Slots gebündelt (z. B. 2×/Tag), damit der Gründer nicht permanent unterbrochen wird. Echte rote Linien und Risiken eskalieren sofort.
+
+### 5.7 Audit Logs
+
+Ein **append-only**, unveränderliches Protokoll jeder relevanten Aktion: welcher Agent, welche Version, welches Tool, welche Eingabe/Ausgabe (sensible Daten referenziert, nicht im Klartext), welche Entscheidung, welcher Mensch hat freigegeben, welcher Risk-Score.
+
+- Speicherung: Supabase (mit Row-Level-Security, kein Update/Delete) + regelmäßiger, schreibgeschützter Export nach Cloudflare R2.
+- Zweck: Erklärbarkeit, Rückverfolgbarkeit, Nachweis gegenüber Kunden/Behörden/Versicherung, Grundlage für Audit-Agent und (später) Audit Board.
+- **Jede** Agentenentscheidung muss im Log erklärbar sein — das ist eine Leitplanke aus dem Auftrag.
+
+### 5.8 Simulation Layer
+
+Bevor riskante oder teure Aktionen real ausgeführt werden, werden sie *simuliert*:
+
+- **Dry-Run-Modus** — Tools haben einen Simulationspfad ("würde diese E-Mail senden", "würde dieses Budget belasten").
+- **Was-wäre-wenn** — der CFO-Agent kann Kalkulationen, der COO-Agent Terminpläne durchrechnen, ohne etwas auszulösen.
+- **Pflicht-Simulation** für alles ab Risk-Score-Schwelle, bevor das Approval-Gate dem Menschen vorgelegt wird (der Mensch sieht dann das simulierte Ergebnis).
+
+### 5.9 Digital Twin der Firma
+
+Ein lebendes Datenmodell des Gesamtzustands: alle Studios, Budgets, offene Tasks, Agentenstatus, Pipeline, Liquidität, offene Gates, Risiken. Der Digital Twin ist:
+
+- die **Datengrundlage des Dashboards** (Kapitel 13),
+- die **Planungsumgebung** — Szenarien ("Was, wenn wir 5 Projekte parallel annehmen?") werden gegen den Twin gerechnet,
+- der **Konsistenzwächter** — Abweichungen zwischen Twin und Realität (z. B. Banksaldo) lösen Alarme aus.
+
+### 5.10 Evaluation System
+
+Misst kontinuierlich die Qualität der Agentenarbeit:
+
+- **Output-Bewertung** — QA-Agent + Stichproben durch den Gründer, strukturiert in Scorecards.
+- **Regressionstests** — Standardaufgaben werden regelmäßig durchlaufen; sinkt die Qualität nach einem Modell-/Prompt-Wechsel, schlägt das System an.
+- **Agenten-Scorecards** — pro Rolle: Erfolgsquote, Nacharbeitsquote, Kosten, Eskalationsquote.
+- **Modellvergleich** — welcher Provider/welches lokale Modell liefert pro Task-Typ das beste Preis-Leistungs-Verhältnis → speist den Model Router.
+
+### 5.11 Incident Management
+
+Wenn etwas schiefgeht (Agent-Fehlentscheidung, Tool-Fehler, Sicherheitsvorfall, Kundenbeschwerde, Lieferausfall):
+
+1. **Erkennen** — durch Safety-/Audit-/CISO-Agent oder Mensch.
+2. **Klassifizieren** — Schweregrad 1 (gering) bis 4 (kritisch).
+3. **Eindämmen** — ggf. Agent pausieren, Workflow stoppen, Quarantäne, Not-Aus.
+4. **Beheben** — zuständige Rolle + ggf. Mensch.
+5. **Aufarbeiten** — Post-Mortem, Eintrag ins Lerngedächtnis, Regel-/Limit-Anpassung.
+
+Ab Schweregrad 3 sofortige Eskalation an den Gründer. DSGVO-Datenpannen: 72-Stunden-Meldeprozess.
+
+### 5.12 Secrets Management
+
+- Zugangsdaten/API-Keys liegen **niemals** in Prompts, Code oder Logs — nur als **Referenzen**.
+- Speicherung in einem dedizierten Secret Store (Supabase Vault / Cloudflare-Secrets), Zugriff nur über vermittelte, geloggte Tool-Aufrufe.
+- Agenten sehen Secrets nie im Klartext; sie rufen ein Tool auf, das Tool nutzt das Secret serverseitig.
+- Rotation, Ablaufdaten, Least-Privilege; CISO-Agent überwacht.
+
+### 5.13 Role-Based Access Control (RBAC)
+
+Jede Rolle hat ein minimales Rechteprofil (Least Privilege). RBAC entscheidet bei jedem Zugriff: Darf *diese Rolle* *dieses Tool* mit *diesen Parametern* auf *diesen Daten* — jetzt? Umsetzung über Supabase Row-Level-Security + Tool-Permission-System (5.3). Rechteänderungen sind selbst auditiert und teils approval-pflichtig (CISO-Vorschlag → Gründer-Freigabe).
+
+### 5.14 Budget Limits
+
+- **Standard-Budgetlimit jedes Agenten: 0 €** — kein Agent bewegt Geld ohne Mensch (rote Linie).
+- **Optional konfigurierbares Mikro-Limit** (z. B. ≤ 20–50 € für Procurement, falls der Gründer es freischaltet) — selbst dann mit Logging und Tageskappung.
+- **Budget je Studio/Unit** — der CFO-Agent überwacht Verbrauch gegen Plan, warnt bei 70 %/90 %, blockiert bei 100 %.
+- **Cloud-Modell-Kosten** sind ebenfalls budgetiert — reißt ein Task das Kostenbudget, routet der Router auf lokale Modelle oder eskaliert.
+
+### 5.15 Risk Scoring
+
+Jede geplante Aktion bekommt vor Ausführung einen **Risk-Score** aus Faktoren wie: Geldhöhe, Außenwirkung, Rechtsrelevanz, Reversibilität, Datensensibilität, Neuheit/Unsicherheit, betroffene Dritte.
+
+| Score | Bedeutung | Konsequenz |
+|---|---|---|
+| niedrig | Routine, reversibel, intern | Agent führt autonom aus, Logging |
+| mittel | spürbare Wirkung / Außenkontakt | Simulation + gebündelte Human-Approval |
+| hoch | Geld, Vertrag, Recht, schwer reversibel | sofortiges Approval-Gate, blockierend |
+| kritisch | rote Linie / Sicherheitsrisiko | Safety-Veto, Not-Aus möglich, nur Mensch |
+
+Der Safety-Agent besitzt das Scoring-Modell; der Audit-Agent prüft, ob Scores konsistent vergeben werden.
+
+### 5.16 Auftragsdurchlauf End-to-End
+
+Beispiel: **Ein Startup-Gründer will eine Landingpage.** So läuft der Auftrag durch das System (Workflow in der Workflow Engine):
+
+| # | Schritt | Wer | Was passiert | Human-Approval? |
+|---|---|---|---|---|
+| 1 | **Eingang** | Sales-Agent | Anfrage trifft ein (LinkedIn/Formular/E-Mail), wird als neues Product Studio in der Registry angelegt. | nein |
+| 2 | **Analyse** | CPO- + CTO-Agent | Bedarf klären, Scope umreißen, Machbarkeit + Aufwand schätzen, offene Fragen sammeln. | nein |
+| 3 | **Angebot** | CFO- + Sales-Agent | Kalkulation (Stückkosten + Marge), Angebotsentwurf mit Fixpreis (750–1.500 €), Scope, Akzeptanzkriterien, Termin. | **JA** — verbindliches Angebot = rote Linie. Gründer prüft & gibt frei. |
+| 4 | **Freigabe (Kunde)** | Sales-Agent | Kunde nimmt an; CLO-Agent prüft Vertragsbasis, Gründer schließt verbindlich ab. | **JA** — Vertragsabschluss = rote Linie. |
+| 5 | **Planung** | COO- + CPO-Agent | Workflow instanziiert, Aufgaben zerlegt, Bausteine aus Shared Services zugewiesen, ggf. Freelancer-Bedarf markiert. | nur falls Freelancer beauftragt wird |
+| 6 | **Ausführung** | CTO-Agent (+ Content-/Design-Agenten) | Landingpage wird gebaut — bevorzugt aus Standardbausteinen; Arbeit in Staging-Umgebung. | nein (Bau in Staging) |
+| 7 | **Qualitätssicherung** | QA-Agent | Prüfung gegen Akzeptanzkriterien, Tests, Linting, Marken-/Tonalitätscheck. QA-Agent hat Veto. | Gründer-Review vor Auslieferung |
+| 8 | **Auslieferung / Deployment** | CTO-Agent | Nach Gründer-Review: Live-Schaltung. Kunde bekommt Vorschau-Link zur Abnahme. | **JA** — Produktiv-Deployment-Gate. |
+| 9 | **Rechnung** | CFO-Agent | Rechnung wird im Buchhaltungstool *vorbereitet*. | **JA** — Rechnungsversand = Geldbezug, Mensch gibt frei. |
+| 10 | **Support** | Support-Agent | Nachfragen, kleine Korrekturen, Self-Service-Hilfe; Wartungs-Abo wird angeboten. | bei Kulanz/Eskalation |
+| 11 | **Nachkalkulation** | CFO- + COO-Agent | Plan vs. Ist: echte Stückkosten, Modell-/Toolkosten, Zeitaufwand, Deckungsbeitrag. | nein |
+| 12 | **Lernen** | Audit-Agent + Evaluation | "Lessons Learned" ins Lerngedächtnis: Welche Bausteine wiederverwendbar? Wo Reibung? Welcher Schätzfehler? Vorlagenbibliothek wird aktualisiert. | nein |
+
+**Kernidee:** Zwischen den Schritten 6 und 12 wird das System mit *jedem* Auftrag besser kalibriert — Schritt 12 füttert Schritt 2 und 3 des *nächsten* Projekts. Die roten Linien (Geld in Schritt 3/9, Vertrag in Schritt 4, Deployment in Schritt 8) sind die festen menschlichen Kontrollpunkte; alles dazwischen läuft so autonom wie möglich.
 
 ---
 
