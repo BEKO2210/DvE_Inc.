@@ -797,31 +797,189 @@ Beispiel: **Ein Startup-Gründer will eine Landingpage.** So läuft der Auftrag 
 
 ## 6. Zugriff auf die reale Welt
 
-> _Sichere Real-World-Interfaces + klare Autonomiestufen._
+Die Firma darf reale Wirkung nur über **definierte, begrenzte, protokollierte Schnittstellen** entfalten. Jedes Interface hat eine Risikoklasse (grün/gelb/rot, siehe 5.3) und einen klaren Autonomie-Status.
 
-- 6.1 Interface-Katalog (E-Mail, Telefon via Operatoren, Kalender, Buchhaltung, Banking, Einkauf, Versand, CRM, ERP, Lager, Werkstätten, lokale Dienstleister, Freelancer-Plattformen, Behörden, Verträge, physische Einsätze)
-- 6.2 Autonomiematrix: autonom erlaubt / nur Vorschlag / immer Mensch
-- 6.3 Freigabegrenzen (Banking, Budget, Vertragswert)
-- 6.4 Not-Aus-Mechanismen (Kill Switch, Circuit Breaker, Quarantäne)
+### 6.1 Interface-Katalog
+
+| Interface | Risikoklasse | Zweck | Phase-0-Status |
+|---|---|---|---|
+| **E-Mail** | gelb | Kunden-/Lieferanten-/Support-Kommunikation | aktiv, mit Regeln (6.2) |
+| **Telefon (über menschliche Operatoren)** | gelb/rot | Gespräche, die ein Mensch führt; Agent liefert Skript/Recherche | inaktiv in Phase 0 |
+| **Kalender** | grün | Termine, Fristen, Slots planen | aktiv, weitgehend autonom |
+| **Buchhaltung (lexoffice/sevDesk)** | gelb | Belege/Rechnungen *vorbereiten*, Daten erfassen | aktiv, nur Entwürfe |
+| **Banking** | **rot** | Kontostand/Umsätze lesen; Zahlungen NUR mit Freigabe | aktiv: nur lesend + Freigabe-Workflow |
+| **Einkauf** | gelb/rot | Tools/Lizenzen/Material beschaffen | aktiv: nur Vorschläge |
+| **Versand / Logistik** | gelb | Sendungen erstellen, Tracking | inaktiv in Phase 0 |
+| **CRM** | grün/gelb | Kunden-/Leaddaten, Pipeline | aktiv |
+| **ERP / Warenwirtschaft** | gelb | Bestände, Aufträge (für spätere Units) | inaktiv in Phase 0 |
+| **Lager** | gelb | Bestandsführung | inaktiv in Phase 0 |
+| **Werkstätten / lokale Dienstleister** | rot | physische Leistungserbringung | inaktiv in Phase 0 |
+| **Freelancer-Plattformen** | gelb/rot | Menschen recherchieren/anfragen; Beauftragung = rot | aktiv: nur recherchieren/anfragen |
+| **Behördenkommunikation** | **rot** | Ämter, Finanzamt, Registergericht | nur mit Human-Approval, immer |
+| **Verträge / rechtsverbindliche Erklärungen** | **rot** | Angebote, AGB, Verträge, Kündigungen | nur mit Human-Approval, immer |
+| **Physische Einsätze** | **rot** | alles vor Ort, alles mit Sicherheitsbezug | nur über geprüfte Menschen |
+| **GitHub** | gelb | Code, Repos, Audit-Anker | aktiv |
+| **Hosting (Vercel/Cloudflare)** | gelb/rot | Staging frei; Produktiv-Deploy = Gate | aktiv mit Deploy-Gate |
+| **LinkedIn / Social** | gelb | Akquise im Rahmen der Plattformregeln | aktiv, mit UWG-/Plattform-Regeln |
+| **IoT-Gateways** | rot | Steuerung realer Geräte | inaktiv in Phase 0 |
+| **Dokumentenmanagement** | grün/gelb | Verträge, Belege, Projektdateien ablegen | aktiv |
+
+### 6.2 Autonomiematrix: autonom / nur Vorschlag / immer Mensch
+
+| Was Agenten **autonom** dürfen | Was Agenten **nur vorschlagen** dürfen | Was **immer ein Mensch** entscheidet |
+|---|---|---|
+| Interne Recherche, Analyse, Planung | Verbindliche Angebote & Preise | **Jede Zahlung / jeder Geldabfluss** (rote Linie) |
+| Entwürfe aller Art (Code in Staging, Texte, Designs, Kalkulationen) | Rechnungsversand | **Vertragsabschluss / Unterschrift** (rote Linie) |
+| Kalendereinträge, interne Terminplanung | Beauftragung von Freelancern/Dienstleistern | Kündigungen, arbeitsrechtliche Schritte |
+| CRM-Pflege, Lead-Recherche, Pipeline-Updates | Einkäufe über dem Mikro-Limit | Behördenkommunikation |
+| Standard-Supportantworten (bekannte Fälle) | Produktiv-Deployments | Kulanz, Erstattungen, Vertragsänderungen |
+| Ticket-Triage, interne Reports | Akquise-Kampagnen / Erstkontakt-Wellen | Aufhebung eines Safety-Vetos |
+| Buchhaltungs-Entwürfe, Belegerfassung | Neue Lieferanten/Tools | Meldepflichtige Datenpannen, schwere Incidents |
+| Simulationen, Was-wäre-wenn-Rechnungen | Strategische Scope-/Produktentscheidungen | Physische/sicherheitsrelevante Einsätze |
+| Lesen von Banking-/Kontodaten | Reaktionen auf Beschwerden mit Eskalationspotenzial | Neue Business Units aktivieren |
+
+**Hinweis zur "aggressiven" Autonomie:** Der Gründer hat aggressive Autonomie gewählt — das wirkt in der **linken Spalte** (Routine läuft maximal selbstständig) und teils in der mittleren (Vorschläge werden gebündelt, nicht einzeln nachgefragt). Die **rechte Spalte** bleibt unangetastet; Zahlungen und Verträge sind harte rote Linien. Erstkontakt-Kommunikation (E-Mail/LinkedIn) hat der Gründer *nicht* als rote Linie markiert — der Blueprint setzt hier dennoch ein **gelbes Gate**: Erstkontakt läuft gegen geprüfte Vorlagen + UWG-Regelwerk und in gebündelter Freigabe, weil ein Fehler hier (Spam-Vorwurf, Abmahnung) teuer und schwer reversibel ist. Dieses Gate kann der Gründer bewusst lockern.
+
+### 6.3 Freigabegrenzen
+
+| Bereich | Autonom | Gebündelte Freigabe | Sofort-Gate (blockierend) |
+|---|---|---|---|
+| **Banking / Zahlungen** | 0 € (nur lesen) | — | **jeder Betrag > 0 €** |
+| **Einkauf / Tools** | optional ≤ 20–50 €, Tageskappung, falls freigeschaltet | bis ~250 € | > 250 € oder Abo/Laufzeitvertrag |
+| **Vertragswert (Kundenangebot)** | — | — | **jedes verbindliche Angebot** |
+| **Freelancer-Beauftragung** | — | bis definiertes Projektbudget | über Budget oder neuer Partner |
+| **Cloud-Modell-Kosten** | innerhalb Task-Budget | Tagesbudget-Schwelle | Monatsbudget gerissen |
+| **Produktiv-Deployment** | — | Standard-Landingpage nach QA+Review | kritische Systeme, Kundenproduktiv-Infra |
+
+Alle Grenzen liegen als Config in der Registry und können vom Gründer angepasst werden — jede Änderung ist auditiert.
+
+### 6.4 Not-Aus-Mechanismen
+
+Vier Stufen, vom Feinen zum Groben:
+
+1. **Circuit Breaker (automatisch, fein):** Reißt ein Agent wiederholt Fehler, Timeouts oder Risk-Limits, wird *seine* Aktion automatisch gestoppt und eskaliert — der Rest läuft weiter.
+2. **Agent-Quarantäne (gezielt):** Ein einzelner Agent wird auf `quarantäne` gesetzt (Registry-Status) — er kann nichts mehr ausführen, nur noch der Mensch oder ein Audit kann ihn reaktivieren. Auslöser: Anomalie, Safety-Veto-Häufung, Verdacht auf Fehlkonfiguration.
+3. **Workflow-Stopp (bereichsweise):** Ein ganzer Auftrags-Workflow oder eine Unit wird pausiert — laufende Schritte werden sauber eingefroren, kein Datenverlust.
+4. **Globaler Not-Aus / Kill Switch (grob):** Ein einziger Schalter (im Dashboard + als CLI-Befehl + als physisch einfacher Weg) friert **alle** Agentenaktivität ein. Lesende Funktionen und das Dashboard bleiben verfügbar, aber kein Agent ruft mehr ein Tool auf. Nur der Gründer kann wieder freigeben.
+
+**Eigenschaften aller Stufen:** Fail-Closed (im Zweifel stoppen, nicht weiterlaufen), jede Auslösung wird geloggt, Wiederanlauf erfordert menschliche Freigabe + kurzes Post-Mortem ab Stufe 2. Der Kill Switch wird regelmäßig getestet (er nützt nur, wenn er nachweislich funktioniert).
 
 ---
 
 ## 7. Human Workforce Modell
 
-> _Je Gruppe: wann gebraucht, wie gebrieft, Qualitätsprüfung, Bezahlung, Feedback-Speicherung, Missbrauchsschutz._
+Menschen sind bei "The Company" keine "Lückenfüller", sondern die **Träger von Haftung, Kreativität, physischer Arbeit und gesetzlich vorgeschriebener Verantwortung**. Der CHRO-Agent koordiniert sie — beauftragt, bezahlt und kündigt aber nie autonom (rote Linie / Arbeitsrecht).
 
-- 7.1 Festangestellte
-- 7.2 Freelancer
-- 7.3 Lokale Operatoren
-- 7.4 Fachkräfte
-- 7.5 Werkstätten
-- 7.6 Fahrer / Logistik
-- 7.7 Monteure
-- 7.8 Designer
-- 7.9 Entwickler
-- 7.10 Rechtsanwälte / Steuerberater
-- 7.11 Qualitätsprüfer
-- 7.12 Onboarding-, Vergütungs- und Bewertungssystem
+**Grundprinzip pro Gruppe** (gilt für 7.1–7.11): _Wann gebraucht · Wie gebrieft · Qualitätsprüfung · Bezahlung · Feedback-Speicherung · Missbrauchsschutz._
+
+### 7.1 Festangestellte
+- **Wann:** Erst ab Phase 2–3, wenn wiederkehrende Kernarbeit ein Dauer-Commitment rechtfertigt. In Phase 0/1 bewusst **keine** Festanstellung (Fixkosten-Risiko bei < 5.000 €).
+- **Briefing:** Vollständiges Onboarding ins OS, Rollenbeschreibung, Zugriff per RBAC.
+- **Qualität:** Reguläre Mitarbeitergespräche (Mensch), KPI-Bezug, Probezeit.
+- **Bezahlung:** Gehalt über Lohnabrechnung (Steuerberater/Lohnbüro) — voll arbeitsrechtskonform.
+- **Feedback:** Personalakte (DSGVO-konform, getrennt vom operativen Memory).
+- **Missbrauchsschutz:** Least-Privilege-Zugänge, Vier-Augen bei kritischen Aktionen, Offboarding-Prozess.
+
+### 7.2 Freelancer
+- **Wann:** Der Standardfall in Phase 0/1 — projektbezogen, wenn Agenten an Grenzen stoßen (Premium-Design, Senior-Code-Review, Spezialthemen).
+- **Briefing:** Agent erstellt ein **standardisiertes Briefing-Paket** (Scope, Akzeptanzkriterien, Assets, Deadline, Kontext) — Mensch gibt es vor Versand frei.
+- **Qualität:** Probeauftrag vor erster echter Beauftragung; QA-Agent + Gründer prüfen Ergebnis gegen Akzeptanzkriterien.
+- **Bezahlung:** Werkvertrag/Dienstvertrag, Rechnung, **Zahlung nur mit Human-Approval**. Auf Scheinselbstständigkeit achten (keine Weisungsabhängigkeit, eigene Betriebsmittel, mehrere Auftraggeber).
+- **Feedback:** Bewertung im Lieferantenregister (Qualität, Termintreue, Kommunikation).
+- **Missbrauchsschutz:** Kein Vollzugriff aufs OS, nur projektbezogene Asset-Übergabe; NDA bei sensiblen Projekten.
+
+### 7.3 Lokale Operatoren
+- **Wann:** Ab Phase 3 (Units C/G) — Menschen, die regional vor Ort koordinieren oder ausführen.
+- **Briefing:** Field-Operations-Agent erstellt Einsatz-Briefing; lokaler Mensch bestätigt Machbarkeit.
+- **Qualität:** Onboarding mit Nachweisen, Probeeinsätze, Bewertungssystem, Stichproben/Mystery-Checks.
+- **Bezahlung:** Vertraglich geregelt, leistungsbezogen, mit Freigabe.
+- **Feedback:** Operator-Register mit Verlaufshistorie.
+- **Missbrauchsschutz:** Identitätsprüfung, Versicherungsnachweis, Eskalations-Hotline mit Mensch, regionale Mensch-Verantwortliche.
+
+### 7.4 Fachkräfte
+- **Wann:** Spezialwissen, das weder Agent noch Generalist-Freelancer abdeckt (z. B. Branchenexperten, Ingenieure).
+- **Briefing:** Präzises fachliches Briefing, oft mit direkter Gründer-Beteiligung.
+- **Qualität:** Referenzprüfung, fachliche Abnahme durch Mensch.
+- **Bezahlung:** Honorar/Tagessatz, mit Freigabe.
+- **Feedback:** Register, mit Fachgebiets-Tags.
+- **Missbrauchsschutz:** Klare Auftragsgrenzen, NDA, kein OS-Zugang.
+
+### 7.5 Werkstätten
+- **Wann:** Unit C — physische Fertigung/Reparatur/Montage.
+- **Briefing:** Standardisiertes Auftragsdokument, Spezifikation, Fotos.
+- **Qualität:** Onboarding-Audit, Versicherungs-/Gewerbenachweis, Abnahmeprotokolle, Bewertungssystem.
+- **Bezahlung:** Werkvertrag, nach Abnahme, mit Freigabe.
+- **Feedback:** Lieferantenregister mit Gewerk-Tags.
+- **Missbrauchsschutz:** Haftungs-/Versicherungsklauseln, Probeaufträge, Eskalationsweg.
+
+### 7.6 Fahrer / Logistik
+- **Wann:** Versand/Transport ab Unit C/G.
+- **Briefing:** Routen-/Sendungsbriefing über Field-Operations-Agent.
+- **Qualität:** Tracking, Zustellnachweis, Bewertungssystem.
+- **Bezahlung:** Pro Auftrag/Strecke, mit Freigabe.
+- **Feedback:** Register.
+- **Missbrauchsschutz:** Identitäts-/Führerschein-/Versicherungsprüfung, Sendungsversicherung.
+
+### 7.7 Monteure
+- **Wann:** Vor-Ort-Installation/Montage (Unit C).
+- **Briefing:** Detailliertes Montagebriefing + Sicherheitshinweise; Mensch bestätigt.
+- **Qualität:** Qualifikationsnachweis, Abnahmeprotokoll mit Fotos, Kundenbestätigung.
+- **Bezahlung:** Nach Abnahme, mit Freigabe.
+- **Feedback:** Operator-/Lieferantenregister.
+- **Missbrauchsschutz:** **Sicherheits-Gate** — riskante physische Arbeit immer mit Mensch-Freigabe, Versicherungspflicht, Safety-Agent prüft Einsatzrisiko.
+
+### 7.8 Designer
+- **Wann:** Phase 0 schon relevant — wenn der Premium-Anspruch (Marke!) über das hinausgeht, was Agenten visuell liefern.
+- **Briefing:** Brand-Agent liefert Brand-Kit + Design-Briefing; Gründer gibt frei.
+- **Qualität:** Portfolio-Prüfung, Probeauftrag, Brand-Konsistenz-Check durch Brand-Agent + Gründer.
+- **Bezahlung:** Pro Projekt/Asset, mit Freigabe.
+- **Feedback:** Register mit Stil-Tags.
+- **Missbrauchsschutz:** Nutzungsrechte/Urheberrecht vertraglich klären, NDA, Asset-Übergabe kontrolliert.
+
+### 7.9 Entwickler
+- **Wann:** Senior-Review größerer Projekte (Unit A/E) und für Komplexität jenseits der Agenten-Zuverlässigkeit.
+- **Briefing:** CTO-Agent liefert technisches Briefing, Repo-Zugang (scoped), Architektur-Kontext.
+- **Qualität:** Code-Review-Standards, Tests, QA-Agent + menschlicher Senior-Review.
+- **Bezahlung:** Tagessatz/Projekt, mit Freigabe.
+- **Feedback:** Register mit Tech-Stack-Tags.
+- **Missbrauchsschutz:** Scoped Repo-Zugriff, keine Produktiv-Secrets, NDA, Offboarding entzieht Zugänge sofort.
+
+### 7.10 Rechtsanwälte / Steuerberater
+- **Wann:** **Ab Tag 1** — Pflichtbereich Mensch. Steuerberater für Jahresabschluss/steuerliche Fragen, Anwalt für Verträge/AGB/echte Rechtsrisiken.
+- **Briefing:** CLO-/CFO-Agent bereitet Unterlagen strukturiert auf; Mensch entscheidet.
+- **Qualität:** Berufsträger — Qualität durch Zulassung/Haftung gesichert; Gründer bewertet Zusammenarbeit.
+- **Bezahlung:** Nach Honorarordnung/Vereinbarung, mit Freigabe.
+- **Feedback:** Register.
+- **Missbrauchsschutz:** Mandatsvertrag, klare Beauftragung — hier schützt die Berufsordnung.
+
+### 7.11 Qualitätsprüfer
+- **Wann:** Wenn der QA-Agent + Gründer-Review nicht ausreichen (kritische/komplexe Lieferungen, Unit E).
+- **Briefing:** QA-Agent liefert Prüfkriterien und Testfälle.
+- **Qualität:** Selbst Fachkräfte — geprüft über Referenzen und Stichprobenvergleich mit QA-Agent-Ergebnis.
+- **Bezahlung:** Pro Prüfauftrag, mit Freigabe.
+- **Feedback:** Register.
+- **Missbrauchsschutz:** Unabhängigkeit von der ausführenden Stelle (keine Selbstprüfung), NDA.
+
+### 7.12 Onboarding-, Vergütungs- und Bewertungssystem
+
+**Onboarding-Trichter (für alle externen Menschen):**
+1. **Bedarf** — Agent meldet konkreten Bedarf mit Anforderungsprofil.
+2. **Recherche** — CHRO-Agent findet Kandidaten (Plattformen, Netzwerk).
+3. **Prüfung** — Nachweise, Referenzen, ggf. Versicherung/Gewerbe; CLO-Agent prüft Vertragsform (inkl. Scheinselbstständigkeits-Check).
+4. **Probeauftrag** — kleiner, bezahlter Testauftrag vor erster echter Beauftragung.
+5. **Freigabe** — **Mensch** entscheidet über Aufnahme ins Netzwerk.
+6. **Registereintrag** — Aufnahme ins Lieferanten-/Operator-Register.
+
+**Vergütungsprozess:** Leistung → Abnahme (QA-Agent/Gründer) → Rechnung/Abrechnung wird vom CFO-Agent *vorbereitet* → **Human-Approval** → Zahlung. Keine Ausnahme — Bezahlung ist rote Linie.
+
+**Bewertungssystem:** Nach jedem Auftrag bewertet das System (und der Gründer) entlang fixer Achsen — **Qualität, Termintreue, Kommunikation, Preis-Leistung, Wiederbeauftragung ja/nein**. Bewertungen sind im Register gespeichert und fließen in die Kandidatenauswahl beim nächsten Bedarf ein. Gute Partner werden bevorzugt und gebunden (Lieferketten-Logik aus Anhang 0).
+
+**Missbrauchsschutz – systemweit:**
+- Least-Privilege-Zugänge, scoped pro Projekt; sofortiger Entzug beim Offboarding.
+- Vier-Augen bei kritischen Schritten; keine Selbstprüfung.
+- NDA/Verträge je nach Sensibilität; Urheber-/Nutzungsrechte immer geklärt.
+- Auffälligkeiten (Qualitätseinbruch, Fristverstöße, Beschwerden) erzeugen Register-Flags und können zur Sperre führen — Entscheidung beim Menschen.
+- Schutz **der Menschen**: faire Briefings, faire Bezahlung, klare Scopes, kein Crunch — der Kulturwert "respektvolle Zusammenarbeit" gilt auch für Externe (siehe Kapitel 11).
 
 ---
 
