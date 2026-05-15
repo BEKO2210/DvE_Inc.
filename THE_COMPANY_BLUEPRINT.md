@@ -1309,121 +1309,378 @@ Das "The Company OS" ist von Anfang an so gebaut, dass es **erst die eigene Firm
 
 ## 12. Beispieltag in dieser Firma
 
-> _Konkreter Arbeitstag, Stunde für Stunde._
+Ein konkreter Tag in **Phase 0** — Solo-Founder, AI Software Studio, zwei laufende Landingpage-Projekte, eine warme Anfrage. Der Gründer arbeitet als Koordinator, ~6–8 h an diesem Tag.
 
-- 12.1 Morgens: automatische Abläufe
-- 12.2 Agenten-Reports
-- 12.3 Vorbereitete Entscheidungen
-- 12.4 Human-Briefings
-- 12.5 Kundenprojekte im Tagesverlauf
-- 12.6 Eskalationen
-- 12.7 Dashboard-Sicht
-- 12.8 Sicht des Gründers/CEO
+### 12.1 Morgens: automatische Abläufe (vor 08:00, ohne Mensch)
+- Während der Nacht haben Always-on-Worker (Cloudflare) gelaufen: Posteingang gesichtet, neue LinkedIn-Antworten erfasst, Hosting-/Build-Status geprüft, Cloud-Modellkosten gegen Budget abgeglichen, Audit-Logs des Vortags verdichtet.
+- Der CEO-Agent hat aus allen C-Agenten-Inputs **eine Tageslage + Entscheidungsvorlage** gebaut.
+- Der CFO-Agent hat den Banksaldo (lesend) mit dem Digital Twin abgeglichen — keine Abweichung.
+- Der Safety-/Audit-Agent hat über Nacht keine Anomalie gemeldet → kein Sofort-Alarm.
+
+### 12.2 Agenten-Reports (08:00, der "Stand-up")
+Der Gründer öffnet das Dashboard und sieht den verdichteten Tagesreport:
+- **Sales-Agent:** 3 neue LinkedIn-Antworten, 1 davon qualifizierter Lead (Startup, will Landingpage). 2 Entwürfe für Folgenachrichten liegen bereit.
+- **COO-Agent:** Projekt "Studio Aurora" ist in QA, Projekt "Studio Bridge" wartet auf Kundenfeedback zur Staging-Vorschau.
+- **CTO-Agent:** Aurora-Build grün, ein Standardbaustein wurde wiederverwendet (Stückkosten-Schätzung gesunken).
+- **QA-Agent:** Aurora hat 2 kleine Mängel (Kontrast, Mobile-Abstand) — Nacharbeit angefordert, Veto bleibt bis behoben.
+- **CFO-Agent:** Liquiditätsreichweite 7 Monate; 1 Rechnungsentwurf (Bridge) wartet auf Freigabe.
+
+### 12.3 Vorbereitete Entscheidungen (08:00–08:30, Freigabe-Slot 1)
+Der Gründer arbeitet die gebündelten Approval-Gates ab — jede Vorlage kompakt (Was/Warum/Kosten/Risiko/Empfehlung):
+- ✅ **Angebot "Studio Cedar"** (neuer Lead, 1.200 € Landingpage) — geprüft, freigegeben → wird verbindlich versendet.
+- ✅ **Rechnungsentwurf "Studio Bridge"** — geprüft, freigegeben → CFO-Agent darf versenden.
+- ⏸️ **Freelancer-Anfrage Design** für ein größeres Folgeprojekt — Gründer will erst Portfolio sehen, zurückgestellt.
+- ✅ Drei LinkedIn-Folgenachrichten — gegen Vorlagen geprüft, freigegeben.
+
+### 12.4 Human-Briefings (08:30–09:00)
+- Der CHRO-Agent hat ein Briefing-Paket für einen Design-Freelancer vorbereitet (Scope, Brand-Kit, Deadline). Der Gründer prüft, ergänzt zwei Sätze, gibt frei — **die Beauftragung selbst** macht er später persönlich (rote Linie).
+- Kurzer Kalendercheck: 11:00 Kundengespräch "Studio Bridge" (Mensch-zu-Mensch, vom Agenten vorbereitet mit Gesprächsleitfaden).
+
+### 12.5 Kundenprojekte im Tagesverlauf
+- **09:00–11:00:** CTO-Agent behebt die Aurora-Mängel, QA-Agent prüft erneut → Veto fällt. Der Gründer macht den finalen Review (10 Min), gibt das Produktiv-Deployment frei → Aurora geht live, Kunde bekommt den Link.
+- **11:00:** Gründer führt das Bridge-Kundengespräch, klärt das Feedback zur Vorschau. Der Support-Agent protokolliert die Punkte als Aufgaben.
+- **11:30–13:00:** Workflow für "Studio Cedar" startet automatisch, sobald der Kunde das Angebot annimmt — CPO-Agent zerlegt den Scope, CTO-Agent beginnt den Bau in Staging.
+- **Nachmittags:** Gründer arbeitet am OS (Unit H) — heute: eine Workflow-Verbesserung, die der letzte Projekt-Retro nahegelegt hat. Begrenzt auf 2 h, damit OS-Bau nicht den Umsatz verdrängt.
+
+### 12.6 Eskalationen (ereignisgetrieben, jederzeit)
+- **14:20:** Der CISO-Agent meldet einen fehlgeschlagenen Login-Versuch auf einem Tool-Account → Schweregrad 1, automatisch geblockt, nur Info. Keine Aktion nötig.
+- **15:40:** Der Sales-Agent stößt bei einem Lead auf eine Anfrage, die nach kritischer Software klingt (Zahlungsabwicklung) → Risk-Score hoch, Workflow pausiert, Vorlage an Gründer: "außerhalb des Phase-0-Scopes, Empfehlung: ablehnen oder als Premium-Engineering-Projekt mit Senior-Freelancer einplanen". Gründer entscheidet: höflich vertagen.
+
+### 12.7 Dashboard-Sicht (jederzeit, Detail in Kapitel 13)
+Eine Bildschirmseite zeigt durchgehend: Liquidität & Reichweite, offene Projekte mit Status-Ampel, offene Freigaben (heute: 0 nach Slot 1, Slot 2 um 17:00), Agentenstatus (alle grün), Risiken/Compliance-Warnungen (1 erledigt), Pipeline (4 Leads), Support-Tickets (2 offen, im SLA).
+
+### 12.8 Abschluss: Sicht des Gründers/CEO (17:00, Freigabe-Slot 2)
+- Zweiter, kurzer Freigabe-Slot: Tagesergebnisse, ein Rechnungsentwurf, die Cedar-Bau-Zwischenstände.
+- Der CEO-Agent erzeugt den **Tagesabschluss**: 1 Projekt live (Aurora), 1 Angebot raus (Cedar), 1 Rechnung versendet (Bridge), 1 Lead vertagt, 0 offene Risiken.
+- Der Audit-Agent hat den ganzen Tag lückenlos protokolliert — der Gründer sieht: 41 Agentenaktionen, 9 Freigaben, 0 rote Linien berührt ohne Mensch.
+- **Was der Gründer an diesem Tag *nicht* tun musste:** selbst Code schreiben, selbst Texte verfassen, selbst Leads suchen, selbst kalkulieren, selbst Logs durchwühlen. **Was nur er konnte:** das Kundengespräch führen, die roten Linien freigeben, die strittige Anfrage entscheiden, die Richtung halten.
+
+> **Das ist der Kern:** Der Tag des Gründers besteht aus *Entscheiden, Prüfen, Beziehung* — nicht aus Ausführen. Das System bereitet vor, führt aus, dokumentiert. Der Mensch bleibt in command und bei den roten Linien in the loop.
 
 ---
 
 ## 13. Dashboard und Betriebssystem
 
-> _Das zentrale Firmen-Dashboard ("The Company OS")._
+Das **"The Company OS"** ist die Software, die diese Firma zur Firma macht: Orchestrator, Gedächtnis, Audit-Log, Regelwerk und Steuerpult in einem. Das **Dashboard** ist die menschliche Oberfläche darauf — die *eine Bildschirmseite*, über die der Gründer die ganze Firma sieht und steuert. Designprinzip: **Eine Seite, keine Suche** — was der Gründer für seine Entscheidungen braucht, ist ohne Klicken sichtbar; Details sind einen Klick tief.
 
-- 13.1 Kennzahlenpanel (Umsatz, Kosten, Cashflow, Qualitätsmetriken, Automationsgrad)
-- 13.2 Projekt- & Pipeline-Ansicht
-- 13.3 Agentenstatus
-- 13.4 Risiken & Compliance-Warnungen
-- 13.5 Offene Freigaben
-- 13.6 Human-Operator-Status
-- 13.7 Liefertermine & Repo-/Produktstatus
-- 13.8 Marketing-Kanäle & Support-Tickets
-- 13.9 Informationsarchitektur / Screen-Layout
+### 13.1 Kennzahlenpanel
+Oben, immer sichtbar — die Vitalwerte:
+- **Liquidität:** Banksaldo (Digital Twin), Liquiditätsreichweite in Monaten, Burn pro Monat.
+- **Umsatz:** laufender Monat, Vormonat, offene Rechnungen, überfällige Rechnungen.
+- **Kosten:** fixe Tool-/Infrakosten, variable Modellkosten (gegen Budget), Freelancer-Kosten.
+- **Qualität:** QA-Veto-Quote, Nacharbeitsquote, Kundenzufriedenheit, Reklamationen.
+- **Automationsgrad:** Anteil Agentenaktionen ohne Mensch vs. mit Freigabe — die zentrale Fortschrittskennzahl der ganzen Firma.
+
+### 13.2 Projekt- & Pipeline-Ansicht
+- **Projekte:** jedes laufende Studio/Repo mit Status-Ampel (Briefing / Bau / QA / Kundenfreigabe / live / Wartung), Termin, verantwortlichem Agenten-Team.
+- **Pipeline:** Leads nach Phase (neu / qualifiziert / Angebot raus / gewonnen / verloren), gewichteter Pipeline-Wert.
+- Klick auf ein Projekt → Detailansicht mit Auftragsdurchlauf-Schritt (Kapitel 2.7), Logs, Artefakten.
+
+### 13.3 Agentenstatus
+- Jeder aktive Agent mit Ampel: läuft / wartet auf Input / wartet auf Freigabe / Fehler / pausiert.
+- Aktuelle Aufgabe je Agent, Laufzeit, Modell-/Kostenverbrauch heute.
+- Auffällige Agenten (Fehler, ungewöhnlich teuer, oft eskalierend) werden hochgereiht.
+
+### 13.4 Risiken & Compliance-Warnungen
+- Offene Incidents nach Schweregrad, Compliance-Flags des CLO-Agenten, ablaufende Fristen (Rechnungen, Verträge, Datenschutz, Versicherungen).
+- Budgetwarnungen (Modellkosten nähern sich Limit), Vendor-Warnungen (Anbieterausfall).
+
+### 13.5 Offene Freigaben
+- Die **Approval-Queue** — alle wartenden Gates, gebündelt, jedes mit kompakter Vorlage (Was / Warum / Kosten / Risiko / Empfehlung).
+- Sortiert nach Dringlichkeit; rote Linien hervorgehoben. Ziel: in zwei kurzen Slots pro Tag abzuarbeiten (siehe Kapitel 12).
+
+### 13.6 Human-Operator-Status
+- Welche Menschen (Gründer, Festangestellte, Freelancer) sind gerade womit beauftragt, mit welchem Stand, welcher Deadline.
+- Offene Human-Briefings, die noch Gründer-Freigabe brauchen.
+
+### 13.7 Liefertermine & Repo-/Produktstatus
+- Kalendersicht der zugesagten Liefertermine mit Ampel (im Plan / gefährdet / überfällig).
+- Pro Produkt/Repo: Live-Status, letzte Deployment, offene Bugs, Wartungsvertrag-Status.
+
+### 13.8 Marketing-Kanäle & Support-Tickets
+- Kanal-Performance (LinkedIn-Outbound-Antwortquote, Website-Anfragen, Empfehlungen).
+- Support-Tickets: offen / in Bearbeitung / im SLA / SLA verletzt, mit Eskalationen.
+
+### 13.9 Informationsarchitektur / Screen-Layout
+- **Zeile 1:** Kennzahlenpanel (Vitalwerte) — immer sichtbar.
+- **Zeile 2 links:** Offene Freigaben (der wichtigste Handlungsblock). **Zeile 2 rechts:** Risiken & Compliance-Warnungen.
+- **Zeile 3:** Projekte & Pipeline.
+- **Zeile 4:** Agentenstatus | Human-Operator-Status | Liefertermine.
+- **Zeile 5:** Marketing & Support.
+- **Querschnitt:** globale Suche, Zeitfilter, und ein **roter Not-Aus** (Kill-Switch, Kapitel 5/6), der von jeder Ansicht erreichbar ist.
+- **Mobil:** reduzierte Sicht — Vitalwerte, offene Freigaben, kritische Alarme. Genug, um unterwegs in command zu bleiben.
+
+> Das OS ist zugleich das **erste Produkt** der Firma (Unit H) und der Kern der späteren White-Label-Plattform (Kapitel 8.9). Es wird deshalb von Anfang an sauber gebaut — nicht als Wegwerf-Skript.
 
 ---
 
 ## 14. Beispiel: Ein neues Repo wird gestartet
 
-> _Vom GitHub-Repo zur Mini-Firma — Schritt für Schritt._
+Konkretes Durchspielen: Ein Kunde hat "Studio Cedar" beauftragt — eine Landingpage für ein Startup. Aus einem leeren GitHub-Repo wird eine kleine, vollständige "Mini-Firma" mit eigener Identität, eigenem Budget und eigenen KPIs (Studio-Logik, Kapitel 11.9). Jeder Schritt zeigt: **welcher Agent, welches Tool, wo der Mensch.**
 
-- 14.1 Namensfindung
-- 14.2 Branding
-- 14.3 Website & Landingpage
-- 14.4 Dokumentation
-- 14.5 Roadmap & Produktstrategie
-- 14.6 Pricing
-- 14.7 Support & Analytics
-- 14.8 Marketing & Kundenakquise
-- 14.9 Release-Prozess & Wartung
-- 14.10 Buchhaltung & rechtliche Prüfung
-- 14.11 Wachstum
+### 14.1 Namensfindung
+- **Agent:** Brand-Agent. **Tool:** Modell + Domain-Check. **Output:** 3–5 Namensvorschläge mit freier `.de`/`.com`-Domain und Begründung.
+- **Mensch:** Gründer (oder Kunde) wählt — Namenswahl ist eine Identitätsentscheidung, keine Maschinenentscheidung.
+
+### 14.2 Branding
+- **Agent:** Brand-Agent + Design-Agent. **Tool:** Design-Generierung, Brand-Kit-Vorlage aus den Shared Services.
+- **Output:** Logo-Varianten, Farbpalette, Typografie, Mini-Styleguide — innerhalb des Holding-Markenrahmens (Kapitel 11.2).
+- **Mensch:** Gründer-Freigabe des finalen Brand-Kits.
+
+### 14.3 Website & Landingpage
+- **Agent:** CPO-Agent zerlegt den Scope → CTO-Agent baut in **Staging**. **Tool:** GitHub-Repo, Build-Pipeline, Hosting (Cloudflare/Vercel/Netlify), wiederverwendete Standardbausteine.
+- **Output:** funktionierende Landingpage auf einer Staging-URL.
+- **Mensch:** keiner — bis hierher autonom; der Mensch kommt bei QA und Go-live.
+
+### 14.4 Dokumentation
+- **Agent:** Doc-Agent. **Tool:** Repo-`README`, Projektakte im Lerngedächtnis.
+- **Output:** technische Doku (wie gebaut, wie deployt), Kundendoku (wie pflege ich das), interne Projektakte.
+
+### 14.5 Roadmap & Produktstrategie
+- **Agent:** CPO-Agent. **Output:** falls der Kunde Ausbau will — eine kleine Roadmap (Phase 2: Blog, Phase 3: Shop). Bei einem einfachen Auftrag bleibt es bei "Landingpage, fertig".
+- **Mensch:** Gründer entscheidet, ob aus dem Studio eine **Franchise** (wiederkehrende Produktlinie) werden soll.
+
+### 14.6 Pricing
+- **Agent:** Pricing-Agent berechnet aus Stückkosten (Modell + ggf. Freelancer + Overhead) einen Vorschlag mit Marge. **Tool:** Kalkulationsvorlage.
+- **Mensch:** **Rote Linie** — der Gründer gibt jeden Preis/jedes Angebot frei, bevor es verbindlich raus geht (Kapitel 5.7, 10.9).
+
+### 14.7 Support & Analytics
+- **Agent:** Support-Agent (Ticket-Annahme, Standardantworten), Analytics-Agent (Besucherzahlen, Conversion).
+- **Tool:** Support-Postfach, Analytics-Tool, Dashboard-Anbindung.
+- **Output:** der Kunde bekommt nach Go-live einen Support-Kanal; die KPIs landen im Dashboard (13.7/13.8).
+
+### 14.8 Marketing & Kundenakquise
+- **Agent:** Marketing-Agent (Content für das Studio), Sales-Agent (falls die Produktlinie weitervermarktet wird).
+- **Tool:** LinkedIn-Outbound, Website-Referenz, Empfehlungs-Flow.
+- **Mensch:** Gründer gibt Außenkommunikation frei; DSGVO/UWG-Konformität prüft der CLO-Agent.
+
+### 14.9 Release-Prozess & Wartung
+- **Agent:** CTO-Agent + QA-Agent. **Ablauf:** QA-Veto muss fallen → Gründer-Review → **Mensch gibt Produktiv-Deployment frei** (rote Linie) → live.
+- **Wartung:** optionaler Wartungsvertrag (wiederkehrender Umsatz, Kapitel 8) — Monitoring-Agent überwacht, meldet, kleinere Fixes laufen als Routine.
+
+### 14.10 Buchhaltung & rechtliche Prüfung
+- **Agent:** CFO-Agent erstellt Rechnungsentwurf, CLO-Agent prüft Vertrag/AGB gegen Vorlagen.
+- **Mensch:** **Rote Linien** — Rechnungsversand und Vertragsabschluss gibt der Gründer frei; alles über der Risikoschwelle → Anwalt/Steuerberater.
+
+### 14.11 Wachstum
+- **Monatlicher Kill-or-Grow-Review** (Kapitel 11.5): Trägt das Studio? Lohnt Ausbau zur Franchise? Oder ohne Drama einstellen?
+- Erfolgreiche Muster (wiederverwendbare Bausteine, Briefing-Vorlagen, Pricing-Logik) fließen zurück in die Shared Services — das nächste Repo startet dadurch schneller und günstiger.
+
+> **Das Muster:** Ein Repo durchläuft *denselben* Auftragsdurchlauf wie jede Arbeit (Kapitel 2.7), nur sichtbar gemacht. Die Agenten führen aus, die Tools liefern den Weltzugriff, und der Mensch sitzt an genau vier Stellen: **Name, Brand-Kit, Preis/Angebot, Go-live + Rechnung/Vertrag.**
 
 ---
 
 ## 15. Risiken und Gegenmaßnahmen
 
-> _Mindestens 30 Risiken. Je Risiko: Ursache, Auswirkung, Frühwarnsignal, Gegenmaßnahme, zuständiger Agent/Mensch._
+Eine ehrliche Firma kennt ihre Bruchstellen. Dieses Kapitel listet die Risikofelder und mündet in ein **Risikoregister mit 32 Einträgen**. Grundprinzip: Jedes Risiko hat eine *zuständige Instanz* (Agent oder Mensch) und ein *Frühwarnsignal*, das im Dashboard sichtbar ist.
 
-- 15.1 Technische Risiken
-- 15.2 Rechtliche Risiken
-- 15.3 Finanzielle Risiken
-- 15.4 Reputationsrisiken
-- 15.5 Sicherheitsrisiken
-- 15.6 Menschliche Risiken
-- 15.7 Agenten-Fehlentscheidungen
-- 15.8 Tool-Missbrauch
-- 15.9 Falsche Daten
-- 15.10 Schlechte Dienstleister
-- 15.11 Kundenbeschwerden
-- 15.12 Haftung
-- 15.13 Skalierungsprobleme
-- 15.14 Gesamt-Risikoregister (Tabelle, ≥30 Einträge)
+### 15.1 Technische Risiken
+Modell-/Toolausfall, fehlerhafter Code in Produktion, Datenverlust, Build-Pipeline kaputt, Lock-in bei einem Anbieter. Gegenmaßnahmen: Multi-Provider + lokale Fallbacks, QA-Veto, Backups, Staging-Pflicht, Vendor-Register.
+
+### 15.2 Rechtliche Risiken
+Fehlerhafter Vertrag, DSGVO-Verstoß, UWG-Verstoß bei Akquise, Scheinselbstständigkeit, AI-Regulatorik. Gegenmaßnahmen: CLO-Agent prüft, Anwalt entscheidet ab Risikoschwelle, geprüfte Vorlagen, kein Massen-Scraping.
+
+### 15.3 Finanzielle Risiken
+Liquiditätsengpass, Modellkosten laufen aus dem Ruder, Kunde zahlt nicht, Fehlkalkulation, zu hoher OS-Bau-Aufwand ohne Umsatz. Gegenmaßnahmen: harte Budgetlimits, Liquiditätsreichweite im Dashboard, Anzahlungen, Pricing-Agent + Gründer-Freigabe.
+
+### 15.4 Reputationsrisiken
+Schlechte Auslieferung, gebrochene Termine, peinlicher AI-Fehler nach außen, negative Bewertung. Gegenmaßnahmen: doppelte Prüfung (QA + Mensch), Premium-Qualitätsversprechen, ehrliche Kommunikation, kleine Scopes in Phase 0.
+
+### 15.5 Sicherheitsrisiken
+Prompt Injection, Credential-Diebstahl, kompromittierter Tool-Account, Datenabfluss. Gegenmaßnahmen: RBAC, Secrets-Management, Tool-Risikoklassen + Gates, Red-Teaming, Audit-Logs, Kill-Switch.
+
+### 15.6 Menschliche Risiken
+Gründer als Single Point of Failure (Krankheit, Überlastung, Urlaub), Freelancer liefert schlecht, Schlüsselwissen nur im Kopf. Gegenmaßnahmen: alles dokumentiert im OS, Vertretungsregelung, mehrere Freelancer-Optionen, bewusste Lastbegrenzung (zwei Freigabe-Slots statt Dauerbetrieb).
+
+### 15.7 Agenten-Fehlentscheidungen
+Halluzination, falsche Schlussfolgerung, übersehene Eskalation, Agent dreht sich im Kreis. Gegenmaßnahmen: Fail-Closed, Eskalation im Zweifel, QA-Agent, Mensch bei roten Linien, Evaluation-System mit harten Tests, Loop-/Kosten-Limits.
+
+### 15.8 Tool-Missbrauch
+Agent nutzt ein Tool außerhalb des vorgesehenen Zwecks, irreversible Aktion ohne Gate, Massenversand. Gegenmaßnahmen: Tool-Risikoklassen, technisch verdrahtete Gates (nicht nur "gebeten"), Rate-Limits, Audit-Log je Tool-Aufruf.
+
+### 15.9 Falsche Daten
+Veraltete Info im Lerngedächtnis, falscher Banksaldo im Digital Twin, fehlerhafte Kundendaten. Gegenmaßnahmen: Quellenkennzeichnung, Digital-Twin-Abgleich (lesend) mit Realität, Verfallsdaten auf Fakten, Plausibilitätsprüfungen.
+
+### 15.10 Schlechte Dienstleister
+Freelancer/Anbieter liefert verspätet, mangelhaft oder fällt aus. Gegenmaßnahmen: Vendor-Register mit Risikoklasse, klare Briefings + Akzeptanzkriterien, Bewertung nach jedem Auftrag, nie kritische Funktion an nur einem Anbieter.
+
+### 15.11 Kundenbeschwerden
+Erwartung verfehlt, Scope-Streit, Unzufriedenheit mit Qualität oder Tempo. Gegenmaßnahmen: fixe Scopes + Akzeptanzkriterien im Angebot, Staging-Vorschau vor Live, definierte Korrekturschleifen inklusive, Support-SLA, Eskalation an Gründer.
+
+### 15.12 Haftung
+Schaden beim Kunden durch fehlerhafte Leistung, Regressforderung. Gegenmaßnahmen: UG/GmbH-Haftungsschutz, AGB mit Haftungsbegrenzung, Versicherungen (Kapitel 10.13), menschliche Endkontrolle, Low-Risk-Scope in Phase 0.
+
+### 15.13 Skalierungsprobleme
+Zu schnelles Wachstum überfordert den Gründer, Qualität sinkt mit Menge, OS skaliert nicht, zu viele Units zu früh. Gegenmaßnahmen: phasenweises Aktivieren (Kapitel 4), Automationsgrad als Wachstumsbremse/-gas, Kill-or-Grow-Review, erst System stabil dann Menge.
+
+### 15.14 Gesamt-Risikoregister
+
+| # | Risiko | Ursache | Auswirkung | Frühwarnsignal | Gegenmaßnahme | Zuständig |
+|---|---|---|---|---|---|---|
+| 1 | Modellanbieter-Ausfall | Anbieterstörung | Produktion steht | Health-Check rot | Multi-Provider + lokale Fallbacks | CTO-Agent |
+| 2 | Modellkosten explodieren | Loop, teures Modell für Trivialaufgabe | Liquidität sinkt | Kostenkurve nähert sich Limit | Budgetlimit, Modell-Aufgaben-Zuordnung | CFO-Agent |
+| 3 | Fehlerhafter Code in Produktion | QA übersehen, Edge-Case | Kunde betroffen, Reputationsschaden | Bug-Report, Monitoring-Alarm | QA-Veto, Staging-Pflicht, Mensch-Review | QA-Agent / Gründer |
+| 4 | Datenverlust | kein Backup, Fehlbedienung | unwiederbringlicher Schaden | Backup-Job fehlgeschlagen | automatische Backups, Restore-Tests | CTO-Agent |
+| 5 | Anbieter-Lock-in | Abhängigkeit von einem Stack | Erpressbarkeit, Migrationskosten | Vendor-Konzentration im Register | exportierbare Daten, Alternativen vorhalten | Gründer |
+| 6 | DSGVO-Verstoß | fehlender AVV, Massen-Scraping | Bußgeld, Abmahnung | CLO-Flag, fehlender AVV | Datenschutzprozess, lokale Modelle für Sensibles | CLO-Agent / Gründer |
+| 7 | Fehlerhafter Vertrag | ungeprüfte Klausel | rechtlicher Nachteil, Haftung | hoher Rechtsrisiko-Score | CLO-Prüfung, Anwalt ab Schwelle | CLO-Agent / Anwalt |
+| 8 | Scheinselbstständigkeit | Freelancer wie Angestellter geführt | Nachzahlung, Strafe | Weisungsabhängigkeit erkennbar | Vertragsform-Prüfung, klare Abgrenzung | CLO-Agent / Gründer |
+| 9 | UWG-Verstoß bei Akquise | unaufgeforderter Massenversand | Abmahnung | Outbound ohne Rechtsgrundlage | konforme Akquise, CLO prüft | CLO-Agent |
+| 10 | Liquiditätsengpass | zu hoher Burn, späte Zahlungen | Zahlungsunfähigkeit | Reichweite < 3 Monate | Anzahlungen, Kostenbremse, Dashboard | CFO-Agent / Gründer |
+| 11 | Kunde zahlt nicht | Insolvenz, Streit | Umsatzausfall | überfällige Rechnung | Anzahlung, Bonität, Mahnprozess | CFO-Agent / Gründer |
+| 12 | Fehlkalkulation | Stückkosten unterschätzt | Projekt defizitär | Marge unter Schwelle | Pricing-Agent + Gründer-Freigabe, Nachkalkulation | Pricing-Agent |
+| 13 | OS-Bau verdrängt Umsatz | zu viel Zeit in Unit H | kein Cashflow | OS-Stunden > Budget | Zeitbudget für OS-Bau begrenzen | Gründer |
+| 14 | Gebrochener Liefertermin | Fehlplanung, Engpass | Reputationsschaden | Termin-Ampel gelb/rot | Puffer, Frühwarnung, ehrliche Kommunikation | COO-Agent |
+| 15 | Peinlicher AI-Fehler nach außen | ungeprüfter Output | Reputationsschaden | — | doppelte Prüfung vor jedem Außenkontakt | QA-Agent / Gründer |
+| 16 | Negative Bewertung | verfehlte Erwartung | Akquise erschwert | Kundenzufriedenheit sinkt | Erwartungsmanagement, Nacharbeit inklusive | Support-Agent / Gründer |
+| 17 | Prompt Injection | manipulierte Eingabe/Webinhalt | Agent handelt falsch | Anomalie im Audit-Log | Input-Härtung, Fail-Closed, Red-Teaming | CISO-Agent |
+| 18 | Credential-Diebstahl | Leck, Phishing | fremder Zugriff | fehlgeschlagene Logins | Secrets-Management, RBAC, 2FA | CISO-Agent |
+| 19 | Kompromittierter Tool-Account | gestohlene Credentials | Missbrauch, Datenabfluss | ungewöhnliche Tool-Aktivität | Audit-Logs, Kill-Switch, Rotation | CISO-Agent / Gründer |
+| 20 | Datenabfluss | Fehlkonfiguration, Angriff | DSGVO-Meldepflicht | DLP-/Audit-Alarm | Verschlüsselung, RBAC, Incident-Prozess | CISO-Agent |
+| 21 | Gründer fällt aus | Krankheit, Überlastung | Firma steht | Überlastsignale, Slot-Stau | Dokumentation im OS, Vertretungsregelung, Lastlimit | Gründer |
+| 22 | Schlüsselwissen nur im Kopf | nicht dokumentiert | nicht reproduzierbar | undokumentierte Prozesse | Doc-Agent, OS als Single Source of Truth | Doc-Agent |
+| 23 | Agenten-Halluzination | Modellgrenze | falsches Ergebnis | QA-Veto, Plausibilitätsfehler | QA-Agent, Mensch bei roten Linien, Evals | QA-Agent |
+| 24 | Übersehene Eskalation | fehlende Regel | rote Linie berührt | Audit-Stichprobe | Fail-Closed, Eskalation im Zweifel, Audit Board | Safety-Agent |
+| 25 | Agent dreht sich im Kreis | Loop ohne Abbruch | Kosten, Stillstand | Loop-Counter, Kostenanstieg | Loop-/Kosten-Limits, Timeout | CTO-Agent |
+| 26 | Tool-Missbrauch | Tool außerhalb Zweck genutzt | irreversible Aktion | Audit-Log-Anomalie | Risikoklassen, verdrahtete Gates, Rate-Limits | CISO-Agent |
+| 27 | Falsche Daten im Gedächtnis | veraltet, fehlerhaft | falsche Entscheidung | Plausibilitätsabweichung | Quellenkennzeichnung, Verfallsdaten, Abgleich | Knowledge-Agent |
+| 28 | Digital Twin weicht ab | Sync-Fehler | falsches Finanzbild | Twin ≠ Banksaldo | regelmäßiger lesender Abgleich, Alarm bei Abweichung | CFO-Agent |
+| 29 | Schlechter Dienstleister | mangelhafte Leistung | Projektverzug | schlechte Vendor-Bewertung | Vendor-Register, Akzeptanzkriterien, Alternativen | COO-Agent |
+| 30 | Kundenbeschwerde / Scope-Streit | Erwartung verfehlt | Konflikt, Reputationsrisiko | Beschwerde, Ticket-Eskalation | fixe Scopes, Staging-Vorschau, Korrekturschleifen | Support-Agent / Gründer |
+| 31 | Haftungsfall | Schaden beim Kunden | Regressforderung | Reklamation mit Schadensbezug | UG-Schutz, AGB, Versicherung, Endkontrolle | Gründer / Anwalt |
+| 32 | Zu schnelles Wachstum | zu viele Aufträge/Units zu früh | Qualität bricht ein | Nacharbeitsquote steigt | phasenweises Aktivieren, Automationsgrad als Bremse | Gründer |
 
 ---
 
 ## 16. MVP-Plan
 
-> _Erste realistische Version für einen einzelnen Gründer._
+Die kleinste Version dieser Firma, die ein **einzelner Gründer** real betreiben kann — Phase 0. Leitsatz: **So wenig wie möglich, aber vollständig genug, um echten Umsatz mit echter Qualität zu liefern.**
 
-- 16.1 Erste Agenten
-- 16.2 Erste Tools
-- 16.3 Erste Prozesse
-- 16.4 Erste Business Unit
-- 16.5 Was bleibt manuell
-- 16.6 Sichere Automationen
-- 16.7 Erfolgsmetriken des MVP
+### 16.1 Erste Agenten
+Nicht das ganze Organigramm — nur der tragende Kern:
+- **CEO-Agent** — Tageslage, Entscheidungsvorlagen, Orchestrierung.
+- **Sales-Agent** — Leads, Outbound-Entwürfe, Angebotsvorbereitung.
+- **CPO-/CTO-Agent** — Scope zerlegen, Landingpages/Websites bauen.
+- **QA-Agent** — Veto-Recht vor jeder Auslieferung.
+- **CFO-Agent** — Rechnungsentwürfe, Kosten-/Liquiditätssicht.
+- **CLO-Agent** — Vertrags-/AGB-/DSGVO-Prüfung gegen Vorlagen.
+- **Safety-/Audit-Agent** — Audit-Log, Eskalation, rote Linien.
+
+### 16.2 Erste Tools
+- GitHub (Repos), eine Build-/Hosting-Pipeline (Cloudflare/Vercel/Netlify).
+- Ein Modellzugang (Cloud) + ein lokales Modell (Ollama) als Fallback/für Sensibles.
+- Postfach, LinkedIn-Zugang, Kalender.
+- Supabase (OS-Datenhaltung, Audit-Log, Lerngedächtnis).
+- Secrets-Management, RBAC — von Tag 1, nicht nachgerüstet.
+
+### 16.3 Erste Prozesse
+- Der **Auftragsdurchlauf** (Kapitel 2.7) als einziger, durchgehender Prozess.
+- **Zwei Freigabe-Slots pro Tag** (Kapitel 12) statt Dauerbetrieb.
+- **Projekt-Retro** nach jedem Auftrag → Lerngedächtnis.
+- Ein lebendes **Compliance-/Red-Team-Checklisten**-Dokument statt Gremien.
+
+### 16.4 Erste Business Unit
+**Nur Unit A — AI Software Studio**, und darin bewusst nur **Low-Risk-Arbeit**: Landingpages, einfache Websites, kleine Web-Tools. Keine kritische/sicherheitsrelevante Software, bis Haftung und Versicherung stehen (Kapitel 10.12/10.13).
+
+### 16.5 Was bleibt manuell
+Die roten Linien (Kapitel 5.7) — unverhandelbar:
+- Zahlungen, Rechnungsversand, Vertragsabschluss.
+- Preis-/Angebotsfreigabe.
+- Produktiv-Deployment.
+- Beauftragung von Menschen, Behördenkontakt.
+- Außenkommunikation in Reputationsfragen, strittige/Out-of-Scope-Anfragen.
+
+### 16.6 Sichere Automationen
+Was von Anfang an autonom laufen darf (Human-on-the-loop):
+- Recherche, Lead-Sichtung, Entwürfe (Texte, Code, Angebote, Nachrichten).
+- Bau in **Staging**, Builds, Tests, QA-Prüfung.
+- Monitoring, Log-Verdichtung, Kostenabgleich, Reporting.
+- Interne Aufgabenverwaltung, Doku-Erstellung.
+
+### 16.7 Erfolgsmetriken des MVP
+Der MVP gilt als gelungen, wenn nach Phase 0:
+- **Liquidität:** mehrere zahlende Kunden, Liquiditätsreichweite stabil > 4 Monate.
+- **Qualität:** keine peinlichen Außenfehler, Nacharbeitsquote sinkt, positive Kundenrückmeldungen.
+- **Automationsgrad:** messbar steigend — derselbe Auftrag braucht weniger Gründer-Minuten als beim ersten Mal.
+- **Sicherheit:** 0 rote Linien ohne Mensch berührt, lückenloses Audit-Log.
+- **Reproduzierbarkeit:** ein zweiter Auftrag desselben Typs läuft spürbar schneller (Bausteine + Vorlagen greifen).
 
 ---
 
 ## 17. 12-Monats-Roadmap
 
-> _Monat 1–12. Je Monat: Ziel, Deliverables, Agenten, Menschen, Kosten, Risiken, Erfolgskriterien._
+Realistischer Pfad für einen Solo-Gründer, Monat für Monat. Kosten sind grobe Größenordnungen (vgl. Kapitel 9), keine Zusagen. Querschnittsrisiko über alle Monate: **OS-Bau verdrängt Umsatz** — Gegenmittel ist das feste Zeitbudget aus Kapitel 16.
 
-| Monat | Ziel | Status |
-|---|---|---|
-| 1 | offen | offen |
-| 2 | offen | offen |
-| 3 | offen | offen |
-| 4 | offen | offen |
-| 5 | offen | offen |
-| 6 | offen | offen |
-| 7 | offen | offen |
-| 8 | offen | offen |
-| 9 | offen | offen |
-| 10 | offen | offen |
-| 11 | offen | offen |
-| 12 | offen | offen |
+| Monat | Ziel | Deliverables | Agenten | Menschen | Kosten (grob) | Hauptrisiko | Erfolgskriterium |
+|---|---|---|---|---|---|---|---|
+| 1 | Fundament | UG-Gründung angestoßen, Konten, Tool-Stack, OS-Grundgerüst (Audit-Log, RBAC, Secrets) | CTO, Safety | Gründer, Steuerberater, Anwalt | Gründungs- + Fixkosten | Gründung verzögert sich | OS protokolliert, rote Linien verdrahtet |
+| 2 | Erster Auftragsdurchlauf | Auftragsdurchlauf end-to-end lauffähig, 1. Landingpage (Test/Bekanntenkreis) | CPO, CTO, QA | Gründer | Fixkosten + Modell | Prozess hakt | 1 Projekt sauber durch alle 12 Schritte |
+| 3 | Erster zahlender Kunde | Akquise-Flow live, 1. bezahlter Auftrag, 1. Rechnung | Sales, CPO, CTO, QA, CFO, CLO | Gründer | Fixkosten + Modell | kein Lead konvertiert | 1. echter Umsatz, Kunde zufrieden |
+| 4 | Wiederholbarkeit | Standardbausteine + Vorlagen, 2–3 Aufträge parallel | alle Kern-Agenten | Gründer, ggf. 1 Freelancer | Fix + Modell + Freelancer | Qualität bricht bei Menge | 2. Auftrag schneller als 1. |
+| 5 | Stabilität | Wartungsverträge eingeführt, Versicherungen abgeschlossen, Red-Team #1 | CISO, QA, CFO | Gründer, Versicherer | Fix + Versicherung | Liquiditätsdelle | wiederkehrender Umsatz beginnt |
+| 6 | Halbjahres-Review | Kill-or-Grow über alle Studios, KPI-Bilanz, OS-Härtung | CEO, Audit | Gründer | Fix + Modell | falsche Selbsteinschätzung | Reichweite > 4 Monate, Automationsgrad messbar gestiegen |
+| 7 | Automationsgrad heben | mehr Schritte Human-on-the-loop statt -in-the-loop, Eval-System ausgebaut | CTO, QA, Safety | Gründer | Fix + Modell | Übergabe zu früh | gleicher Auftrag = weniger Gründer-Minuten |
+| 8 | Skalierung der Akquise | Outbound + Referenzen + Empfehlungs-Flow systematisiert | Sales, Marketing | Gründer | Fix + Modell | Pipeline dünn | volle Pipeline, planbarer Eingang |
+| 9 | Unit-Vorbereitung | zweite Unit evaluieren (z. B. Content/Automation), Scope-Test | CEO, CPO | Gründer | Fix + Modell | Verzettelung | belastbare Go/No-Go-Entscheidung |
+| 10 | Zweite Unit oder Vertiefung | zweite Unit aktivieren *oder* Unit A vertiefen (Franchises) | je nach Entscheidung | Gründer, Freelancer | steigend | zu früh verbreitert | neue Einnahmequelle *oder* stärkere Marge |
+| 11 | OS als Produkt prüfen | White-Label-Potenzial des OS bewerten, erster Pilot-Interessent | CPO, CTO | Gründer | Fix + Modell | OS noch nicht reif | belastbares Urteil zur Plattform-Option |
+| 12 | Jahresabschluss & Plan | Jahresbilanz, Lessons Learned, Roadmap Jahr 2, Audit-Board formalisieren | CEO, CFO, Audit | Gründer, Steuerberater | Fix + Abschlusskosten | Stagnation unbemerkt | profitabel *oder* klarer, finanzierter Pfad dahin |
 
 ---
 
 ## 18. Finale Bewertung
 
-> _Ehrliche Gesamteinschätzung._
+Ehrliche Gesamteinschätzung — ohne Hype, ohne Schönfärberei.
 
-- 18.1 Was wäre diese Firma wirklich?
-- 18.2 Einordnung (Softwarefirma / Holding / Agentensystem / Plattform / Beratung / digitale Fabrik)
-- 18.3 Alleinstellungsmerkmal
-- 18.4 Wie wird sie defensible?
-- 18.5 Was ist daran gefährlich?
-- 18.6 Was ist daran extrem wertvoll?
-- 18.7 Was muss zuerst gebaut werden?
+### 18.1 Was wäre diese Firma wirklich?
+Eine **von einem Menschen geführte, von Agenten betriebene Softwarefirma.** Der Mensch ist nicht der Ausführende, sondern der Eigentümer, Richtungsgeber und letzte Kontrollinstanz; die Agenten sind nicht "Mitarbeiter mit Persönlichkeit", sondern ein orchestriertes System aus spezialisierten Ausführungseinheiten. In Phase 0 ist es konkret: ein Solo-Gründer plus ein OS, das die Arbeit eines kleinen Teams leistet. Es ist kein "autonomes Unternehmen" — es ist ein **Hebel**, der einen einzelnen Menschen befähigt, wie eine Organisation zu liefern.
+
+### 18.2 Einordnung
+Sie ist von allem etwas, aber der Reihe nach:
+1. **zuerst eine Softwarefirma** (sie liefert Software gegen Geld),
+2. **gebaut als Agentensystem** (so produziert sie),
+3. **strukturiert wie eine Holding** (Units/Studios als Portfolio),
+4. **mit dem Bauplan einer Plattform** (das OS als späteres White-Label-Produkt),
+5. **mit Anteilen von Beratung und digitaler Fabrik** (Prozess statt Heldentum).
+Die ehrlichste Kurzform: eine **digitale Fabrik für Softwareprodukte**, deren Fließband aus Agenten besteht.
+
+### 18.3 Alleinstellungsmerkmal
+Nicht "wir benutzen AI" — das tun bald alle. Das USP ist die **Kombination aus Tempo und verdrahteter Verlässlichkeit**: geprüfte Auslieferung, gehaltene Termine, lückenlose Nachvollziehbarkeit, Mensch an genau den Stellen, an denen Verantwortung menschlich sein muss. Premium-Qualität zu einem Tempo und einer Kostenstruktur, die ein klassisches Team nicht erreicht — und Governance, die ein typisches "AI-Startup" nicht hat.
+
+### 18.4 Wie wird sie defensible?
+Nicht durch ein einzelnes Modell (austauschbar) oder ein einzelnes Tool (austauschbar). Verteidigungsfähig wird sie durch:
+- das **Lerngedächtnis** — jeder Auftrag macht das System besser, das ist kumulativ und nicht kopierbar;
+- die **eingespielten Prozesse und Bausteine** — Stückkosten sinken mit jedem Repo;
+- die **Marke** — Vertrauen, das man nicht kaufen kann;
+- das **OS selbst** — wenn es zur Plattform wird, entsteht ein zweiter, schwer angreifbarer Burggraben.
+
+### 18.5 Was ist daran gefährlich?
+Ehrlich benannt:
+- **Single Point of Failure Gründer** — fällt er aus, steht alles (Kapitel 15.6).
+- **Übermäßiges Vertrauen in Agenten** — der Tag, an dem eine ungeprüfte Ausgabe durchrutscht, ist ein Reputations- oder Haftungsereignis.
+- **OS-Bau frisst Umsatz** — das Lieblingsrisiko technischer Gründer.
+- **Regulatorik** — AI-Recht ist in Bewegung; was heute erlaubt ist, ist es morgen vielleicht anders.
+- **Selbsttäuschung** — ein System, das beeindruckende Reports erzeugt, kann den Blick darauf verstellen, ob es *wirtschaftlich* trägt.
+
+### 18.6 Was ist daran extrem wertvoll?
+- **Hebel:** ein Mensch liefert wie ein Team — bei niedrigen Fixkosten.
+- **Kumulatives Lernen:** das System wird mit Gebrauch besser, nicht müder.
+- **Optionalität:** dieselbe Maschine kann Software liefern *und* sich selbst als Plattform verkaufen *und* in weitere Units expandieren.
+- **Governance als Asset:** verdrahtete rote Linien und lückenlose Audits sind in einer AI-Welt, die das meist nicht hat, ein echter Marktvorteil.
+
+### 18.7 Was muss zuerst gebaut werden?
+In dieser Reihenfolge, nichts überspringen:
+1. **Das Sicherheitsfundament** — Audit-Log, RBAC, Secrets, verdrahtete rote Linien. Vor dem ersten Agenten, der etwas Reales anfasst.
+2. **Der eine Auftragsdurchlauf** — end-to-end, an einem echten kleinen Projekt.
+3. **Der erste zahlende Kunde** — alles davor ist Theorie.
+4. **Wiederholbarkeit** — Bausteine, Vorlagen, Lerngedächtnis, damit der zweite Auftrag billiger ist als der erste.
+Erst danach: weitere Units, mehr Automationsgrad, die Plattform-Option.
 
 ---
 
-_Ende Durchlauf 1 — Struktur. Nächster Schritt: Ausarbeitung Abschnitt für Abschnitt nach Freigabe._
+### Schlusswort
+Dieser Blueprint beschreibt kein Wunder und keinen Hype. Er beschreibt eine **disziplinierte Bauanleitung**: ein Mensch, der in command bleibt, ein System, das ausführt, dokumentiert und lernt, und eine harte Grenze — Geld, Recht, Sicherheit und Haftung bleiben menschlich. Wenn diese Firma gelingt, dann nicht, weil sie "autonom" war, sondern weil sie **ehrlich gebaut** war: Sie verspricht nichts, was sie nicht geprüft hat, und sie verbirgt nichts, was sie getan hat.
+
+---
+
+_Ende des Blueprints — Durchlauf 2 abgeschlossen: alle 18 Kapitel und Anhänge ausgearbeitet._
