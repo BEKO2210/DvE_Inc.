@@ -1428,6 +1428,38 @@ const migrations: Migration[] = [
       db.exec(`ALTER TABLE mcp_call_log ADD COLUMN signature TEXT DEFAULT NULL`)
       db.exec(`ALTER TABLE mcp_call_log ADD COLUMN public_key TEXT DEFAULT NULL`)
     }
+  },
+  {
+    id: '051_red_lines',
+    up(db: Database.Database) {
+      // Business red lines (THE_COMPANY_BLUEPRINT.md ch. 5.7 / 10.x / 16.5):
+      // human-in-the-loop approval gates for irreversible, money-, legal-,
+      // security- or liability-relevant actions. Fail-closed by design — a
+      // request executes only after an authorised human decision.
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS red_line_requests (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          action TEXT NOT NULL,
+          risk_class TEXT NOT NULL,
+          status TEXT NOT NULL DEFAULT 'pending',
+          summary TEXT NOT NULL,
+          context TEXT,
+          requested_by TEXT NOT NULL,
+          decided_by TEXT,
+          decision_reason TEXT,
+          executed_by TEXT,
+          workspace_id INTEGER NOT NULL DEFAULT 1,
+          tenant_id INTEGER NOT NULL DEFAULT 1,
+          created_at INTEGER NOT NULL DEFAULT (unixepoch()),
+          decided_at INTEGER,
+          executed_at INTEGER,
+          expires_at INTEGER NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_red_line_requests_status ON red_line_requests(status);
+        CREATE INDEX IF NOT EXISTS idx_red_line_requests_action ON red_line_requests(action);
+        CREATE INDEX IF NOT EXISTS idx_red_line_requests_workspace ON red_line_requests(workspace_id);
+      `)
+    }
   }
 ]
 
