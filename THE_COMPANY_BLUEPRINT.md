@@ -1156,38 +1156,154 @@ Zehn Einnahmequellen, gestaffelt nach Reife. **In Phase 0 trägt 8.2 (Projektges
 
 ## 10. Governance, Sicherheit und Recht
 
-> _Governance-Modell + rechtlicher Rahmen._
+> **Hinweis:** Dieses Kapitel beschreibt ein Governance-*Modell*. Es ersetzt keine Rechtsberatung. Konkrete Umsetzung (UG-Gründung, Verträge, AGB, Versicherungen, DSGVO-Dokumentation) gehört in die Hände von Steuerberater und Anwalt — der CLO-Agent bereitet zu, Menschen entscheiden.
 
-- 10.1 Human-in-the-loop / Human-on-the-loop / Human-in-command
-- 10.2 Audit Board
-- 10.3 Compliance Board
-- 10.4 Data Protection Officer
-- 10.5 Incident Response
-- 10.6 Red-Team-Prüfungen
-- 10.7 Model Risk Management
-- 10.8 Vendor Risk Management
-- 10.9 Vertragsprüfung
-- 10.10 Datenschutz
-- 10.11 Arbeitsrecht
-- 10.12 Haftung
-- 10.13 Versicherungen
+### 10.1 Drei Kontrollmodi: in-the-loop / on-the-loop / in-command
+
+| Modus | Bedeutung | Wo angewendet |
+|---|---|---|
+| **Human-in-the-loop** | Mensch ist Teil des Ablaufs — ohne seine Freigabe geht es nicht weiter. | Zahlungen, Verträge, Rechnungsversand, Produktiv-Deployment, Beauftragung von Menschen, Behörden. |
+| **Human-on-the-loop** | Agenten handeln autonom, Mensch beobachtet, kann jederzeit eingreifen/stoppen. | Routine-Ausführung, Recherche, Entwürfe, interne Workflows, Standard-Support. |
+| **Human-in-command** | Der Mensch setzt Ziele, Regeln, Grenzen und Prioritäten — das System führt darunter aus. Übergeordnet zu beiden anderen. | Strategie, Regelwerk, Budgetrahmen, Aktivierung von Units, Konfiguration aller Limits. |
+
+**Grundsatz:** Der Gründer ist immer *in command*. Bei roten Linien zusätzlich *in the loop*. Bei allem anderen *on the loop* — gestützt durch Audit-Logs und Dashboard.
+
+### 10.2 Audit Board
+- **Was:** Gremium (Phase 0: der Gründer + ggf. ein externer Berater; ab Phase 2: 2–3 Personen, davon mind. eine extern/unabhängig), das regelmäßig die Audit-Logs, Incidents und Agentenentscheidungen stichprobenartig prüft.
+- **Aufgabe:** Prüft, ob das System nach den eigenen Regeln handelt, ob Eskalationen korrekt liefen, ob rote Linien gehalten wurden.
+- **Taktung:** Phase 0 wöchentliche Kurzdurchsicht durch den Gründer; ab Phase 2 monatliche formale Sitzung.
+
+### 10.3 Compliance Board
+- **Was:** Verantwortet das Regelwerk selbst — Datenschutz, UWG/Werberecht, Arbeitsrecht, Plattformregeln, AI-Regulatorik (z. B. EU-AI-Act-Pflichten, soweit einschlägig).
+- **Aufgabe:** Hält Regeln aktuell, übersetzt neue Gesetze in OS-Konfiguration (Tool-Risikoklassen, Gates), gibt Compliance-Schulungen für Menschen.
+- **Phase 0:** Gründer + CLO-Agent + Anwalt auf Abruf; eine lebende Compliance-Checkliste statt eines Gremiums.
+
+### 10.4 Data Protection Officer (Datenschutzverantwortlicher)
+- **Phase 0:** Der Gründer trägt die Datenschutzverantwortung selbst (eine formelle DSB-Pflicht besteht für kleine Unternehmen meist nicht — vom Anwalt prüfen lassen).
+- **Aufgaben:** Verzeichnis von Verarbeitungstätigkeiten, Auftragsverarbeitungsverträge (AVV) mit allen Tool-/Modellanbietern, Lösch-/Aufbewahrungskonzept, Betroffenenrechte, Datenpannen-Prozess (72 h).
+- **Technische Stütze:** sensible Daten bevorzugt über lokale Modelle (Ollama), RBAC, Audit-Logs für jeden Zugriff.
+- **Ab Phase 2/3:** formelle DSB-Bestellung prüfen (intern oder extern).
+
+### 10.5 Incident Response
+- Folgt dem Prozess aus Kapitel 5.11 (Erkennen → Klassifizieren → Eindämmen → Beheben → Aufarbeiten).
+- **Vier Schweregrade**, ab Grad 3 sofortige Gründer-Eskalation.
+- **Spezialpfad Datenpanne:** DSGVO-Meldefrist 72 h an die Aufsichtsbehörde, ggf. Information Betroffener — CISO-Agent bereitet vor, Mensch entscheidet und meldet.
+- **Post-Mortem-Pflicht** ab Grad 2: dokumentierte Ursache, Lehre, Regel-/Limit-Anpassung im Lerngedächtnis.
+
+### 10.6 Red-Team-Prüfungen
+- **Was:** Regelmäßige gezielte Angriffe auf das eigene System — kann ein Agent zu einer roten Linie verleitet werden? Greift Prompt Injection? Lässt sich ein Approval-Gate umgehen? Halten die Budgetlimits?
+- **Wer:** Phase 0 der Gründer mit Checkliste/Testfällen; ab Phase 2 externe Sicherheitsprüfer.
+- **Taktung:** mind. quartalsweise und nach jeder größeren OS-Änderung.
+- **Ergebnis:** Findings fließen als harte Tests ins Evaluation-System (5.10).
+
+### 10.7 Model Risk Management
+- **Was:** Steuerung der Risiken aus den eingesetzten KI-Modellen — Halluzination, Bias, Inkonsistenz, Anbieterabhängigkeit, Preis-/Verfügbarkeitsänderungen.
+- **Maßnahmen:** Multi-Provider-Strategie + lokale Modelle als Fallback, Regressionstests bei jedem Modellwechsel, Modell-Scorecards, klare Aufgaben-Modell-Zuordnung, kein "blindes" Vertrauen — kritische Outputs immer durch QA-Agent + Mensch.
+
+### 10.8 Vendor Risk Management
+- **Was:** Risiken aus Tool-, Infrastruktur- und Dienstleisteranbietern (Supabase, Cloudflare, Vercel, Modellanbieter, Plattformen, Freelancer).
+- **Maßnahmen:** AVV/Verträge mit allen datenführenden Anbietern, Bewertung von Ausfall-/Lock-in-Risiko, möglichst exportierbare Daten, Lieferanten-/Vendor-Register mit Risikoklasse, kritische Funktionen nie nur an einem Anbieter.
+
+### 10.9 Vertragsprüfung
+- **Ablauf:** CLO-Agent prüft jeden Vertrag/Angebot/AGB-Text gegen Vorlagen und Checklisten, vergibt einen Rechtsrisiko-Score, markiert kritische Klauseln.
+- **Rote Linie:** **Kein Vertrag wird ohne Mensch geschlossen.** Standardverträge unterhalb der Risikoschwelle gibt der Gründer frei; alles darüber → Anwalt.
+- **Vorlagenpflege:** geprüfte Standardvorlagen (Werkvertrag, NDA, AGB, Auftragsbestätigung) in den Shared Services, anwaltlich erstellt/abgesegnet.
+
+### 10.10 Datenschutz
+- DSGVO gilt vollständig. Kern: Datenminimierung, Zweckbindung, Rechtsgrundlage je Verarbeitung, Betroffenenrechte, AVV, Löschkonzept, technische Schutzmaßnahmen.
+- "Privacy by Design": sensible Daten lokal verarbeiten, RBAC, Audit-Logs, Verschlüsselung, keine Klartext-Secrets.
+- **Akquise-spezifisch:** LinkedIn-/Outbound-Daten DSGVO- und UWG-konform verarbeiten — kein wahlloses Scraping, kein Massenversand ohne Rechtsgrundlage.
+
+### 10.11 Arbeitsrecht
+- Festangestellte: vollständig konform (Verträge, Lohnabrechnung, Sozialversicherung, Arbeitszeit) — über Steuerberater/Lohnbüro.
+- Freelancer/Externe: **Scheinselbstständigkeit aktiv vermeiden** — keine Weisungsabhängigkeit, keine Eingliederung wie ein Angestellter, eigene Betriebsmittel, mehrere Auftraggeber. CLO-Agent prüft die Vertragsform, Mensch entscheidet.
+- Kündigungen, Abmahnungen, arbeitsrechtliche Schritte: **immer Mensch, nie Agent.**
+
+### 10.12 Haftung *(Empfehlung des Blueprints)*
+Empfohlene Strategie für Phase 0 (Gründer-Entscheidung: "Du empfiehlst"):
+1. **Rechtsform als erster Schutz:** UG/GmbH = Haftungsbeschränkung auf das Gesellschaftsvermögen. Deshalb von Anfang an Kapitalgesellschaft, nicht Einzelunternehmen.
+2. **AGB mit Haftungsbegrenzung ab Tag 1:** anwaltlich erstellte AGB, die Haftung auf Vorsatz/grobe Fahrlässigkeit und auf typische, vorhersehbare Schäden begrenzen — soweit rechtlich zulässig.
+3. **Klare Scopes & Akzeptanzkriterien:** jedes Angebot definiert exakt, was geliefert wird — reduziert Streit- und Haftungsfläche.
+4. **Scope klein halten, bis Absicherung steht:** in Phase 0 bewusst Low-Risk-Projekte (Landingpages, unkritische Websites), **keine** kritische/sicherheitsrelevante Software.
+5. **Menschliche Endkontrolle** vor jeder Auslieferung — der QA-Agent + Gründer-Review sind auch ein Haftungsschutz.
+6. **Versicherung:** sobald erste Einnahmen fließen, eine **Berufs-/Vermögensschaden- und IT-Haftpflicht** abschließen (siehe 10.13) — nicht erst "irgendwann".
+
+### 10.13 Versicherungen *(Empfehlung des Blueprints)*
+| Versicherung | Wann | Zweck |
+|---|---|---|
+| **Betriebs-/Berufshaftpflicht (IT/Medien)** | ab erstem Umsatz | deckt Vermögensschäden beim Kunden durch fehlerhafte Leistung |
+| **Vermögensschadenhaftpflicht** | ab erstem Umsatz | reine Vermögensschäden (typisch für Software-/Beratungsleistung) |
+| **Cyber-Versicherung** | Phase 1 | Datenpannen, Hacks, Betriebsunterbrechung |
+| **Rechtsschutz (gewerblich)** | Phase 1 | Vertrags-/Forderungsstreitigkeiten |
+| **D&O / erweiterte Deckung** | Phase 2–3 | Organhaftung, mit wachsender Größe |
+| **Branchenspezifisch (z. B. für Units C/G)** | vor Aktivierung der jeweiligen Unit | physische Risiken, Plattformhaftung |
+
+**Faustregel:** Versicherungssumme und -umfang wachsen mit Umsatz und Projektrisiko. Keine Unit mit physischer/erhöhter Haftung (C, G) wird aktiviert, bevor die passende Deckung steht.
+
+### 10.X Governance-Grundsatz in einem Satz
+**Je schwerer eine Aktion rückgängig zu machen ist, desto mehr Mensch steckt in der Entscheidung** — und jede Entscheidung, ob Agent oder Mensch, ist protokolliert, erklärbar und rückverfolgbar.
 
 ---
 
 ## 11. Marken- und Kulturmodell
 
-> _Identität der Firma._
+Positionierung (Gründer-Entscheidung): **Premium-Studio, bei dem AI im Hintergrund arbeitet.** AI ist das Werkzeug, nicht das Verkaufsargument — verkauft wird *Ergebnisqualität, Verlässlichkeit und Tempo*.
 
-- 11.1 Markenphilosophie
-- 11.2 Visuelle Sprache
-- 11.3 Tonalität
-- 11.4 Werte
-- 11.5 Interne Rituale
-- 11.6 Agenten-Ethik
-- 11.7 Qualitätsversprechen
-- 11.8 Premium-Faktor (Porsche/Mercedes-Logik)
-- 11.9 Studio-/Franchise-Denken (Activision-Logik)
-- 11.10 Plattformdenken (Amazon/Apple-Logik)
+### 11.1 Markenphilosophie
+"The Company" steht für **planbare Exzellenz**: Der Kunde bekommt das versprochene Ergebnis, in versprochener Qualität, zum versprochenen Termin — ohne Drama. Die Marke verkauft nicht "billige AI-Arbeit" und nicht "Hype", sondern das ruhige Vertrauen, dass geliefert wird. Intern gilt: Die Organisation ist aus Prozessen gebaut, nicht aus Heldentum — gute Arbeit ist das Ergebnis guter Systeme, nicht von Überstunden.
+
+### 11.2 Visuelle Sprache
+- Reduziert, präzise, hochwertig — viel Weißraum, klare Typografie, ruhige Farbpalette, keine Effekthascherei (Porsche-Logik: Qualität zeigt sich in Zurückhaltung).
+- Konsistenz über alle Touchpoints (Website, Angebot, Rechnung, LinkedIn) — gepflegt vom Brand-Agent über ein zentrales Brand-Kit in den Shared Services.
+- Jedes Product Studio darf eine eigene Mini-Identität haben, aber innerhalb des Marken-Rahmens der Holding.
+
+### 11.3 Tonalität
+- **Klar, ehrlich, kompetent, ohne Buzzwords.** Keine Übertreibung, keine leeren Superlative.
+- Selbstbewusst, aber nicht arrogant; freundlich, aber nicht anbiedernd.
+- Ehrlich über Grenzen — wenn etwas nicht geht oder nicht sinnvoll ist, wird es gesagt. Das ist Teil des Premium-Versprechens.
+- Gilt für Agenten-Kommunikation *und* menschliche Kommunikation gleichermaßen — der CLO-Agent prüft zusätzlich auf rechtlich heikle Aussagen.
+
+### 11.4 Werte
+1. **Engineering Discipline** — nichts geht ungeprüft raus.
+2. **Erklärbarkeit** — jede Entscheidung ist nachvollziehbar.
+3. **Ehrlichkeit** — über Können, Grenzen, Preise, Fehler.
+4. **Verantwortung bleibt menschlich** — bei Geld, Recht, Sicherheit, Haftung.
+5. **Respektvolle Zusammenarbeit** — faire Briefings und Bezahlung für alle Menschen, auch Externe; kein Crunch.
+6. **Lernen statt Schuld** — Fehler werden aufgearbeitet, nicht bestraft.
+
+### 11.5 Interne Rituale
+- **Täglicher Stand-up-Report:** Der CEO-Agent erzeugt morgens eine Lage + Entscheidungsvorlage (siehe Kapitel 12).
+- **Wöchentliche Audit-Durchsicht:** Der Gründer prüft Logs, Incidents, KPIs.
+- **Projekt-Retro nach jedem Auftrag:** Schritt 12 des Auftragsdurchlaufs — "Lessons Learned" ins Lerngedächtnis.
+- **Monatlicher "Kill-or-Grow"-Review:** Welche Produkte/Units/Studios wachsen, welche werden eingestellt?
+- **Quartals-Red-Team:** geplanter Angriff aufs eigene System.
+
+### 11.6 Agenten-Ethik
+- Agenten **täuschen nicht** — gegenüber Kunden wird nie der Eindruck erweckt, ein Mensch habe geschrieben, wo ein Agent schrieb, wenn danach gefragt wird; und nie umgekehrt.
+- Agenten **überschreiten keine roten Linien** — technisch verdrahtet, nicht nur "gebeten".
+- Agenten **eskalieren im Zweifel**, statt zu raten (Fail-Closed).
+- Agenten **manipulieren nicht** — keine Dark Patterns, keine irreführende Werbung, keine ausbeuterische Monetarisierung.
+- Agenten **respektieren Plattformregeln und Gesetze** — auch wenn ein Verstoß kurzfristig effizienter wäre.
+
+### 11.7 Qualitätsversprechen
+Gegenüber dem Kunden, konkret und überprüfbar:
+- **Geprüfte Auslieferung:** Jeder Output ist von QA-Agent *und* einem Menschen geprüft, bevor er den Kunden erreicht.
+- **Fixe Scopes & Termine:** Was im Angebot steht, gilt — inklusive Termin.
+- **Vorschau vor Live:** Der Kunde sieht das Ergebnis (Staging) vor der Live-Schaltung.
+- **Nacharbeit inklusive:** definierte Korrekturschleifen sind Teil des Preises.
+- **Nachvollziehbarkeit:** auf Wunsch kann erklärt werden, *wie* ein Ergebnis entstanden ist.
+
+### 11.8 Premium-Faktor (Porsche/Mercedes-Logik)
+Premium heißt hier nicht "teuer", sondern **konsistent verlässlich**. Der Aufpreis gegenüber einer Billig-Agentur rechtfertigt sich durch: geprüfte Qualität, gehaltene Termine, saubere Verträge, ehrliche Kommunikation, After-Sales (Wartung). Lieber **wenige Produktlinien exzellent** als viele mittelmäßig (Apple-Fokus).
+
+### 11.9 Studio-/Franchise-Denken (Activision-Logik)
+Jedes Projekt/Repo ist ein **Studio** mit eigener Mini-Identität, eigenem Budget, eigenen KPIs. Erfolgreiche Studios werden zu **Franchises** ausgebaut (wiederkehrende Produktlinien), erfolglose ohne Drama eingestellt. Das schafft Portfolio-Denken: wenige Treffer tragen viele Versuche.
+
+### 11.10 Plattformdenken (Amazon/Apple-Logik)
+Das "The Company OS" ist von Anfang an so gebaut, dass es **erst die eigene Firma trägt und später anderen Unternehmern als White-Label-Plattform dient** (siehe 8.9). Jede interne Funktion wird gefragt: "Könnte das später ein Produkt sein?" Standardisierte, dokumentierte Prozesse (Siemens-Logik) machen die Organisation unabhängig von einzelnen Personen — das ist die Voraussetzung dafür, dass sie sich überhaupt als Plattform vervielfältigen lässt.
+
+### 11.X Kultur in einem Satz
+**"Wir bauen eine Firma, der man vertrauen kann — weil sie nichts verspricht, was sie nicht geprüft hat, und nichts verbirgt, was sie getan hat."**
 
 ---
 
