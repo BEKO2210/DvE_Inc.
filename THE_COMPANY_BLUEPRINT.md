@@ -985,32 +985,172 @@ Menschen sind bei "The Company" keine "Lückenfüller", sondern die **Träger vo
 
 ## 8. Geschäftsmodell
 
-> _Einnahmequellen + Bewertung (schnelle vs. langfristige Einnahmen, Risiken, Kapitalbedarf, Margen, Skalierbarkeit)._
+Zehn Einnahmequellen, gestaffelt nach Reife. **In Phase 0 trägt 8.2 (Projektgeschäft) praktisch den gesamten Umsatz** — der Rest wird bewusst erst später aktiviert, damit sich der Solo-Founder nicht verzettelt.
 
-- 8.1 SaaS-Abos
-- 8.2 Projektgeschäft
-- 8.3 Agent-as-a-Service
-- 8.4 Managed Operations
-- 8.5 Marketplace-Provision
-- 8.6 Premium-Support
-- 8.7 Enterprise-Lizenzen
-- 8.8 Daten-/Analyseprodukte (nur anonymisiert, rechtlich sauber)
-- 8.9 White-Label-Agentenfirma
-- 8.10 Beteiligungen an automatisiert aufgebauten Projekten
-- 8.11 Bewertungsmatrix aller Einnahmequellen
+### 8.1 SaaS-Abos
+- **Was:** Wiederkehrende Gebühr für eigene digitale Produkte (Unit B) und später das OS (Unit H).
+- **Wann aktiv:** Phase 1–2.
+- **Geschwindigkeit:** langsam aufzubauen, dann stabil und planbar.
+- **Marge:** hoch (geringe Grenzkosten), aber Betriebs-/Supportlast.
+
+### 8.2 Projektgeschäft  *(Phase 0 — Kern)*
+- **Was:** Fixpreis-Aufträge des AI Software Studios — Einstieg "Landingpage in 48 h" (750–1.500 €), dann größere Websites/MVPs/Tools.
+- **Geschwindigkeit:** **schnellste Einnahmequelle** — Cash kommt mit jedem Auftrag.
+- **Marge:** anfangs mittel (viel Hand-/Prüfarbeit), steigt mit dem Baustein-Wiederverwendungsgrad deutlich.
+- **Schwäche:** nicht wiederkehrend — muss durch 8.6 (Wartung) ergänzt werden.
+
+### 8.3 Agent-as-a-Service
+- **Was:** Einzelne Agenten-Fähigkeiten als abrufbarer Dienst (z. B. "Akquise-Agent für deinen Vertrieb", "QA-Agent für dein Repo").
+- **Wann aktiv:** Phase 2.
+- **Geschwindigkeit:** mittel; braucht stabile, vorzeigbare Agenten.
+- **Marge:** hoch, gut skalierbar — aber Support- und Erwartungsmanagement nötig.
+
+### 8.4 Managed Operations
+- **Was:** Die Firma betreibt einen ganzen Funktionsbereich für einen Kunden laufend (z. B. komplettes Web-/Marketing-Ops eines Startups).
+- **Wann aktiv:** Phase 2–3.
+- **Geschwindigkeit:** langsam (Vertrauen nötig), dann sehr stabil und hochwertig.
+- **Marge:** hoch, lange Kundenbindung; Risiko: operative Abhängigkeit, Haftung.
+
+### 8.5 Marketplace-Provision
+- **Was:** Provision aus der Vermittlung physischer/digitaler Leistungen (Units C/G).
+- **Wann aktiv:** Phase 3.
+- **Geschwindigkeit:** langsam (Netz muss erst stehen).
+- **Marge:** mittel; skaliert mit dem Netz, aber Plattformhaftung und Qualitätssteuerung sind anspruchsvoll.
+
+### 8.6 Premium-Support / Wartung
+- **Was:** Monatliche Wartungs-/Update-/Hosting-Retainer nach Projektabschluss (After-Sales-Logik aus Anhang 0).
+- **Wann aktiv:** **schon Phase 0** — direkt nach dem ersten ausgelieferten Projekt anbietbar.
+- **Geschwindigkeit:** schnell *nach* dem ersten Projekt; wichtigste Quelle wiederkehrender Einnahmen früh.
+- **Marge:** sehr hoch (wenig Aufwand pro Monat), glättet den Cashflow.
+
+### 8.7 Enterprise-Lizenzen
+- **Was:** Größere Firmen lizenzieren Produkte/das OS mit eigenen Konditionen, SLAs, Datenschutz-Zusatz.
+- **Wann aktiv:** Phase 3–4.
+- **Geschwindigkeit:** langsam (lange Sales-Zyklen).
+- **Marge:** sehr hoch, große Tickets — aber Compliance-/Vertrags-/Supportaufwand erheblich.
+
+### 8.8 Daten-/Analyseprodukte (nur anonymisiert, rechtlich sauber)
+- **Was:** Aggregierte, **anonymisierte** Branchen-/Benchmark-Insights aus der eigenen Projekterfahrung — niemals Kundendaten, niemals personenbezogen.
+- **Wann aktiv:** Phase 3–4, und nur nach klarer Rechtsprüfung (CLO-Agent + Anwalt).
+- **Geschwindigkeit:** langsam.
+- **Marge:** hoch — aber **Reputations- und Rechtsrisiko**, deshalb strenge Leitplanken und im Zweifel: lieber nicht.
+
+### 8.9 White-Label-Agentenfirma
+- **Was:** "The Company OS" als Plattform, mit der andere Unternehmer ihre eigene AI-native Firma betreiben — gebrandet auf sich selbst.
+- **Wann aktiv:** Phase 2 vorbereiten, Phase 3–4 skalieren. **Von Anfang an mitgedacht** (Gründer-Entscheidung): jede OS-Komponente wird so gebaut, dass sie später mandantenfähig und produktisierbar ist.
+- **Geschwindigkeit:** langsam, aber höchstes Hebelpotenzial.
+- **Marge:** sehr hoch; das ist der strategische Endzustand der Holding.
+
+### 8.10 Beteiligungen an automatisiert aufgebauten Projekten
+- **Was:** Statt nur Dienstleistung — die Firma baut Projekte mit auf und hält Anteile / Umsatzbeteiligung ("Venture-Studio-Logik").
+- **Wann aktiv:** Phase 3–4.
+- **Geschwindigkeit:** sehr langsam, hohes Risiko, illiquide.
+- **Marge:** potenziell extrem hoch, aber spekulativ — nur mit Überschüssen, nie mit Betriebskapital.
+
+### 8.11 Bewertungsmatrix aller Einnahmequellen
+
+| # | Quelle | Schnelle Einnahmen | Langfristige Einnahmen | Kapitalbedarf | Marge | Skalierbarkeit | Hauptrisiko | Phase |
+|---|---|---|---|---|---|---|---|---|
+| 8.2 | Projektgeschäft | ●●● | ●○○ | sehr niedrig | mittel→hoch | mittel | nicht wiederkehrend | **0** |
+| 8.6 | Premium-Support/Wartung | ●●○ | ●●● | sehr niedrig | sehr hoch | hoch | Kunde kündigt Abo | **0** |
+| 8.1 | SaaS-Abos | ●○○ | ●●● | niedrig | hoch | sehr hoch | kein Product-Market-Fit | 1–2 |
+| 8.3 | Agent-as-a-Service | ●○○ | ●●○ | niedrig | hoch | hoch | Erwartung > Realität | 2 |
+| 8.4 | Managed Operations | ○○○ | ●●● | niedrig | hoch | mittel | operative Abhängigkeit | 2–3 |
+| 8.9 | White-Label-OS | ○○○ | ●●● | mittel | sehr hoch | sehr hoch | Komplexität, Wettbewerb | 2→3–4 |
+| 8.5 | Marketplace-Provision | ○○○ | ●●○ | mittel | mittel | hoch | Plattformhaftung | 3 |
+| 8.7 | Enterprise-Lizenzen | ○○○ | ●●● | mittel | sehr hoch | mittel | lange Zyklen, Compliance | 3–4 |
+| 8.8 | Daten-/Analyseprodukte | ○○○ | ●●○ | niedrig | hoch | hoch | **Recht & Reputation** | 3–4 |
+| 8.10 | Beteiligungen | ○○○ | ●●● (spekulativ) | hoch | sehr hoch | niedrig | Totalverlust | 3–4 |
+
+**Strategische Lesart:** In Phase 0 gibt es genau zwei "An"-Schalter: **Projektgeschäft (8.2)** für schnellen Cash und **Wartung (8.6)** für die ersten wiederkehrenden Einnahmen. Alles andere ist definiert, aber bewusst aus — Fokus schlägt Streuung, besonders beim Solo-Founder mit < 5.000 €. Der langfristige Wert der Holding liegt in 8.9 (White-Label-OS), deshalb wird das OS von Tag 1 produktisierbar gebaut, aber erst spät verkauft.
 
 ---
 
 ## 9. Finanzmodell
 
-> _Realistisches Phasenmodell. Je Phase: Team, Kosten, Umsatzquellen, kritische KPIs, Risiken, Infrastruktur, Meilensteine._
+> **Wichtiger Hinweis:** Alle Zahlen sind **Modellannahmen für die Planung**, keine Prognosen und keine Garantie. Sie dienen dazu, Größenordnungen, Reihenfolgen und Risiken sichtbar zu machen. Reale Zahlen weichen ab — das Modell wird mit echten Daten aus der Nachkalkulation (Kapitel 5.16) laufend korrigiert.
 
-- 9.0 Phase 0 — Solo-Founder mit AI-Agenten
-- 9.1 Phase 1 — 3–5 Menschen + Agentensystem
-- 9.2 Phase 2 — 15–30 Menschen + spezialisierte Business Units
-- 9.3 Phase 3 — 50–100 Menschen + internationales Operator-Netzwerk
-- 9.4 Phase 4 — AI-native Holding mit vielen Tochterprojekten
-- 9.5 Annahmen, Sensitivitäten, Break-even-Logik
+### 9.0 Phase 0 — Solo-Founder mit AI-Agenten
+
+- **Team:** 1 Mensch (Gründer als Koordinator, ~30–40 h/Woche) + Agentensystem. Externe nur punktuell (Steuerberater ab Tag 1; 0–2 Freelancer auf Abruf).
+- **Kosten (monatlich, Modellannahme):**
+  | Posten | ca. |
+  |---|---|
+  | Cloud-Modelle (API, Multi-Provider) | 50–200 € |
+  | Infrastruktur (Supabase/Cloudflare/Vercel — überwiegend Gratis-Tarife) | 0–30 € |
+  | Buchhaltungstool | 10–20 € |
+  | Domains/Hosting/diverse Tools | 20–50 € |
+  | LinkedIn (ggf. Premium) | 0–60 € |
+  | Steuerberater (anteilig, v. a. Jahresabschluss) | 50–150 € |
+  | Rücklage Recht/Versicherung | 50–100 € |
+  | **Summe** | **~230–610 €/Monat** |
+  - **Einmalig:** UG-Gründung (Notar, Regist, Stammkapital ab 1 €) — realistisch 300–800 € Setup. Lokale Hardware für Ollama: optional, nur falls vorhanden/sinnvoll.
+- **Umsatzquellen:** 8.2 Projektgeschäft ("Landingpage in 48 h", 750–1.500 €) + 8.6 Wartung (ab erstem Projekt).
+- **Kritische KPIs:** erster zahlender Kunde (Tag X), Deckungsbeitrag pro Projekt, Liquiditätsreichweite (Monate), Anzahl ausgelieferter Projekte, Wiederbeauftragungs-/Wartungsquote.
+- **Risiken:** kein Vertrieb (Akquise zündet nicht), Qualitätsschwankung, Gründer ist Engpass, UWG-Fehler, Zeit verzettelt sich im OS-Bau statt in Umsatz.
+- **Infrastruktur:** OS-Minimalkern (Registry, ein Workflow, Approval-Dashboard, Audit-Log), E-Mail, Kalender, GitHub, Hosting, CRM-Light, Buchhaltungstool, LinkedIn.
+- **Meilensteine:** UG gegründet · OS-Minimalkern läuft · erstes Angebot raus · **erster zahlender Kunde** · erstes Wartungs-Abo · 3–5 ausgelieferte Projekte mit Nachkalkulation.
+
+### 9.1 Phase 1 — 3–5 Menschen + Agentensystem
+
+- **Team:** Gründer + 2–4 Menschen (Mix aus 1–2 Festen/Kern-Freelancern: z. B. Senior-Dev, Designer, ggf. Vertriebs-/Ops-Unterstützung).
+- **Kosten (monatlich, Modellannahme):** ~4.000–12.000 € — dominiert von Personal/Honoraren; Tool-/Modellkosten steigen moderat auf 300–800 €.
+- **Umsatzquellen:** 8.2 + 8.6 skaliert; Start von 8.1 (erste SaaS-/Produkt-Experimente) und Unit D (Marketing-Retainer).
+- **Kritische KPIs:** monatlich wiederkehrender Umsatz (MRR aus Wartung/Retainern), Deckungsbeitrag, Auslastung, Pipeline-Wert, Anteil Standardbausteine, Liquiditätsreichweite.
+- **Risiken:** erste Fixkosten (Personal) bei noch volatilem Umsatz, Qualitätssteuerung über mehrere Menschen, Gründer wird vom Macher zum Manager.
+- **Infrastruktur:** OS mit mehreren Workflows, RBAC, Evaluation-System, Lieferantenregister, sauberes Dashboard.
+- **Meilensteine:** stabiler MRR deckt Fixkosten · zweite Unit (D) liefert · OS trägt parallele Projekte · erster Festangestellter oder fester Kern-Freelancer.
+
+### 9.2 Phase 2 — 15–30 Menschen + spezialisierte Business Units
+
+- **Team:** 15–30 Menschen, organisiert nach Units (A, B, D, H aktiv; E/F im Aufbau), mit Unit-Leads.
+- **Kosten (monatlich, Modellannahme):** ~60.000–180.000 € — überwiegend Personal; Modell-/Infrakosten 2.000–8.000 €.
+- **Umsatzquellen:** 8.1, 8.2, 8.3, 8.6 voll; 8.4 (Managed Operations) startet; 8.9 (White-Label-OS) wird vorbereitet.
+- **Kritische KPIs:** Umsatz/Mitarbeiter, MRR-Anteil am Gesamtumsatz, Marge je Unit, Kundenbindung, Automationsgrad, Cash Conversion.
+- **Risiken:** Organisations-Komplexität, Kulturverwässerung, Qualitäts-Konsistenz über Units, Abhängigkeit von Schlüsselpersonen, Cloud-Kosten-Skalierung.
+- **Infrastruktur:** mandantenfähiges OS (Vorbereitung White-Label), Compliance-Layer ausgebaut, Audit Board (Menschen) eingerichtet, Incident-Management produktiv.
+- **Meilensteine:** mehrere profitable Units · OS White-Label-fähig · erste externe OS-Pilotkunden · Audit/Compliance-Board aktiv.
+
+### 9.3 Phase 3 — 50–100 Menschen + internationales Operator-Netzwerk
+
+- **Team:** 50–100 Menschen + regionales Operator-Netz (Units C/G), internationale Erweiterung.
+- **Kosten (monatlich, Modellannahme):** ~250.000–700.000 € — Personal, Operator-Netz, Infrastruktur, Compliance, Versicherungen.
+- **Umsatzquellen:** voller Mix 8.1–8.9; 8.5 (Marketplace) und 8.7 (Enterprise) tragen relevant bei; 8.8/8.10 vorsichtig gestartet.
+- **Kritische KPIs:** Konzern-EBIT-Marge, Umsatz je Region/Unit, Net Revenue Retention, Plattformkennzahlen (aktive White-Label-Mandanten), Incident-Rate.
+- **Risiken:** Haftung/Plattformhaftung (Units C/G), internationales Recht/Steuern, Skalierungs-Qualität, Regulatorik für AI, Wettbewerb.
+- **Infrastruktur:** voll ausgebautes OS, regionale Rechts-/Steuerstruktur, professionelles Risk-/Vendor-Management, Versicherungsportfolio.
+- **Meilensteine:** profitables Operator-Netz in ≥1 Land · zahlende White-Label-Mandanten · Enterprise-Kunden · belastbare Konzern-Governance.
+
+### 9.4 Phase 4 — AI-native Holding mit vielen Tochterprojekten
+
+- **Team:** Holding-Kern (schlank) + viele halbautonome Studios/Töchter + großes Operator-/Partnernetz; Menschen vor allem in Führung, Recht, Haftung, Kreativität, Vor-Ort.
+- **Kosten:** stark variabel/dezentral je Tochter; Holding trägt Plattform, Governance, Marke.
+- **Umsatzquellen:** Plattform-/Lizenzumsatz (8.9, 8.7) und Beteiligungen (8.10) dominieren; die operativen Units sind teils verselbstständigt.
+- **Kritische KPIs:** Plattform-Umsatz, Anzahl & Gesundheit der Töchter/Mandanten, Holding-Cashflow, Wert des Beteiligungsportfolios, Marken-/Vertrauensmetriken.
+- **Risiken:** Klumpenrisiken, Governance über viele Einheiten, Regulatorik, Reputations-Ansteckung zwischen Töchtern, Modell-/Anbieterabhängigkeit.
+- **Infrastruktur:** OS als Produkt + interne Plattform, Konzern-Governance, Audit/Compliance/Security als eigene Organisationen.
+- **Meilensteine:** mehrere selbsttragende Töchter · Plattform-Umsatz > Dienstleistungsumsatz · Holding lebt von Plattform + Beteiligungen.
+
+### 9.5 Annahmen, Sensitivitäten, Break-even-Logik
+
+**Kernannahmen:**
+- Variable Kostenstruktur in Phase 0/1 — wenig Fixkosten, fast alles pro Auftrag.
+- Stückkosten je Projekt sinken mit dem Wiederverwendungsgrad der Bausteine (Lernkurve aus Kapitel 5.16).
+- Wartungs-Abos (8.6) sind der Hebel von "Projekt-zu-Projekt-Überleben" zu "planbarem MRR".
+
+**Break-even-Logik Phase 0:** Break-even ist erreicht, wenn der **monatliche Deckungsbeitrag** (Projektmargen + Wartungs-MRR) die **monatlichen Fixkosten** (~230–610 €) übersteigt. Bei einem Modell-Deckungsbeitrag von z. B. 500–1.000 € je Landingpage-Projekt genügen rechnerisch **1–2 Projekte pro Monat** plus erste Wartungs-Abos, um Phase 0 selbsttragend zu machen. Das ist die eigentliche Schwelle, ab der die Firma "lebt".
+
+**Sensitivitäten (was das Modell am stärksten kippt):**
+| Hebel | Wirkung |
+|---|---|
+| Akquise-Conversion (LinkedIn) | bestimmt, ob überhaupt Umsatz entsteht — **kritischster Faktor Phase 0** |
+| Nacharbeitsquote / QA-Fehler | frisst Marge direkt; jeder Fehler = doppelte Stückkosten |
+| Wiederverwendungsgrad Bausteine | hebt die Marge über die Zeit am stärksten |
+| Wartungs-Abschlussquote | entscheidet über planbaren MRR |
+| Cloud-Modellkosten vs. lokale Modelle | bei Massenarbeit relevant; Ollama-Anteil schützt die Marge |
+| Zeitanteil Gründer: Umsatz vs. OS-Bau | zu viel OS-Bau verzögert Break-even |
+
+**Finanzierungslogik:** Phase 0/1 strikt **bootstrapped** (aus Cashflow). Investoren/Fremdkapital erst sinnvoll, wenn ein wiederholbares, profitables Modell *nachgewiesen* ist (frühestens Phase 2) — vorher würde Kapital nur ein ungelöstes Vertriebs-/Qualitätsproblem kaschieren. Beteiligungen (8.10) und riskante Quellen nur aus echten Überschüssen, nie aus Betriebskapital.
 
 ---
 
